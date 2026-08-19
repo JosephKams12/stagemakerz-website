@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Stagemakerz Company — stage sets, exhibition stands, product displays, lighting and event environments.">
+  <title>Stagemakerz Company — The Right Stage, Set & Design For You</title>
+  <link rel="stylesheet" href="css/style.css?v=static-map-8">
+  <style>
+    /* Critical gallery overlay rules: keep the viewer above Selected Work, never in page flow. */
+    #galleryLightbox[hidden]{display:none!important}
+    #galleryLightbox{position:fixed;inset:0;z-index:9999;display:grid;place-items:center}
+    #galleryLightbox .gallery-backdrop{position:absolute;inset:0;background:rgba(5,5,7,.92)}
+    #galleryLightbox .gallery-dialog{position:relative;z-index:1;width:min(1180px,calc(100vw - 44px));height:min(780px,calc(100vh - 44px));display:grid;place-items:center}
+    /* Navigation is absolutely anchored to the centre-left and centre-right of the viewer. */
+    #galleryLightbox .gallery-nav{position:absolute!important;z-index:4;top:50%!important;bottom:auto!important;width:46px;height:46px;display:grid;place-items:center;transform:translateY(-50%)!important;border:1px solid rgba(17,17,17,.12);border-radius:50%;background:#fff;color:#e21a22;box-shadow:0 12px 28px rgba(40,27,24,.14);font-size:20px;font-weight:900;line-height:1;transition:transform .25s ease,background .25s ease,color .25s ease}
+    #galleryLightbox .gallery-nav-prev{left:10px!important;right:auto!important}
+    #galleryLightbox .gallery-nav-next{right:10px!important;left:auto!important}
+    #galleryLightbox .gallery-nav:hover,#galleryLightbox .gallery-nav:focus-visible{background:#e21a22;color:#fff;transform:translateY(-50%) scale(1.05)!important}
+    @media(max-width:760px){#galleryLightbox .gallery-nav{width:40px;height:40px;font-size:18px}#galleryLightbox .gallery-nav-prev{left:0!important}#galleryLightbox .gallery-nav-next{right:0!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Stagemakerz home">
+        <img src="assets/logo.png" alt="Stagemakerz Company">
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <button class="btn btn-primary nav-cta" data-estimate>Consultation</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero section">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">STAGEMAKERZ COMPANY</p>
+          <h1>The right stage,<br><span>set & design</span><br>for you.</h1>
+          <p class="hero-lead">We craft experiences that help events stand out — from stage sets and exhibition stands to lighting, display units and bespoke event environments.</p>
+          <div class="button-row">
+            <button class="btn btn-primary" data-estimate>Get Free Estimate</button>
+            <a class="btn btn-ghost" href="#portfolio">Explore Our Work</a>
+          </div>
+          <div class="hero-proof">
+            <span>Architecture-led</span><i></i><span>Design • Build • Deliver</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="motion-visual" aria-label="Animated showcase of Stagemakerz stage, exhibition, display and lighting work">
+            <div class="motion-glow" aria-hidden="true"></div>
+            <div class="motion-main">
+              <img class="motion-scene scene-1" src="assets/stagemakerz_stage_clean.jpg" alt="Live event stage with dramatic lighting and audience" fetchpriority="high" decoding="async" referrerpolicy="no-referrer">
+              <img class="motion-scene scene-2" src="assets/stagemakerz_brand_stage.jpg" alt="Wide live-event stage with concert lighting and audience" decoding="async" referrerpolicy="no-referrer">
+              <img class="motion-scene scene-3" src="assets/stage only.png" alt="Large outdoor stage prepared for an event" decoding="async">
+              <img class="motion-scene scene-4" src="assets/selected-work/stageh1.jpg" alt="Completed indoor event production with stage lighting" decoding="async">
+              <span class="motion-line motion-line-a" aria-hidden="true"></span>
+              <span class="motion-line motion-line-b" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Specialties">
+      <div class="container trust-grid">
+        <span>Specialists in</span><b>Stage Sets</b><b>Exhibition Stands</b><b>POS & Display</b><b>Set Lighting</b><b>Event Design</b>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container split-grid">
+        <div class="reveal">
+          <p class="eyebrow">ABOUT US</p>
+          <h2>Built by architects.<br><em>Designed for impact.</em></h2>
+          <p>We understand designs in 3D and how different elements come together to form a whole. Our goal is to turn your brief into an environment that feels intentional, memorable and professionally executed.</p>
+          <p>From the first brief to final handover, we combine design thinking, production discipline and hands-on delivery.</p>
+          <a class="text-link" href="#contact">Talk to our team <span>↗</span></a>
+        </div>
+        <div class="about-media reveal">
+          <img src="assets/architect.png" loading="lazy" alt="Architect working on a scale model and design plans" referrerpolicy="no-referrer">
+          <div class="orange-note process-note" aria-label="Our process: Brief, Design, Execution, Delivery">
+            <span class="process-step"><b>01</b>Brief</span>
+            <span class="process-step"><b>02</b>Design</span>
+            <span class="process-step"><b>03</b>Execution</span>
+            <span class="process-step"><b>04</b>Delivery</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section">
+      <div class="container">
+        <div class="section-head light reveal">
+          <p class="eyebrow">HOW WE WORK</p><h2>A clear process.<br>One exceptional result.</h2>
+        </div>
+        <div class="process-grid">
+          <article class="process-item reveal"><span>01</span><h3>Brief</h3><p>We listen, ask the right questions and dial in the details.</p></article>
+          <article class="process-item reveal"><span>02</span><h3>Design</h3><p>We create a tailor-made concept built around your occasion.</p></article>
+          <article class="process-item reveal"><span>03</span><h3>Execution</h3><p>Our experienced team executes the design to precision.</p></article>
+          <article class="process-item reveal"><span>04</span><h3>Delivery</h3><p>We deliver an experience that exceeds expectations.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section services">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">WHAT WE DO</p><h2>Services built to make<br><em>your event unforgettable.</em></h2>
+          <p>Select a service to explore related work in the portfolio.</p>
+        </div>
+        <div class="service-track-wrap">
+          <button class="slider-btn prev" data-service-prev aria-label="Previous service">←</button>
+          <div class="service-track" id="serviceTrack">
+            <article class="service-card reveal" data-service="Stage Set Design">
+              <div class="service-image"><img src="assets/service1.jpg" loading="lazy" alt="Stage set design"></div>
+              <div class="card-body"><span class="card-number">01</span><h3>Stage Set Design</h3><p>Concept-to-build stage environments that make the event feel intentional.</p><button class="btn btn-primary service-portfolio" data-service-select="Stage Set Design">View portfolio</button></div>
+            </article>
+            <article class="service-card reveal" data-service="Exhibition Stands">
+              <div class="service-image"><img src="assets/service2.jpg" loading="lazy" alt="Exhibition stand"></div>
+              <div class="card-body"><span class="card-number">02</span><h3>Exhibition Stands</h3><p>Custom stands engineered to attract attention and communicate your brand.</p><button class="btn btn-primary service-portfolio" data-service-select="Exhibition Stands">View portfolio</button></div>
+            </article>
+            <article class="service-card reveal" data-service="Product Display Units">
+              <div class="service-image"><img src="assets/service3.jpg" loading="lazy" alt="Product display unit"></div>
+              <div class="card-body"><span class="card-number">03</span><h3>Product Display Units</h3><p>Point-of-sale and display solutions that turn products into experiences.</p><button class="btn btn-primary service-portfolio" data-service-select="Product Display Units">View portfolio</button></div>
+            </article>
+            <article class="service-card reveal" data-service="Lighting & Special Effects">
+              <div class="service-image"><img src="assets/service4.jpg" loading="lazy" alt="Event lighting and special effects"></div>
+              <div class="card-body"><span class="card-number">04</span><h3>Lighting & Special Effects</h3><p>Lighting, screens and effects that shape mood, energy and visibility.</p><button class="btn btn-primary service-portfolio" data-service-select="Lighting & Special Effects">View portfolio</button></div>
+            </article>
+          </div>
+          <button class="slider-btn next" data-service-next aria-label="Next service">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="section portfolio">
+      <div class="container">
+        <div class="section-head portfolio-head reveal">
+          <div><p class="eyebrow">SELECTED WORK</p><h2>Real work. Built for<br><em>real experiences.</em></h2></div>
+          <p>Explore a selection of completed stage sets, exhibitions, display environments and lighting productions.</p>
+        </div>
+        <div class="portfolio-filter" role="group" aria-label="Portfolio filters">
+          <button class="filter active" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter" data-filter="stage" aria-pressed="false">Stage sets</button>
+          <button class="filter" data-filter="exhibition" aria-pressed="false">Exhibition</button>
+          <button class="filter" data-filter="pos" aria-pressed="false">POS</button>
+          <button class="filter" data-filter="lighting" aria-pressed="false">Lighting</button>
+        </div>
+        <div class="portfolio-carousel-wrap">
+          <button class="portfolio-arrow portfolio-prev" data-portfolio-prev aria-label="Previous selected work">←</button>
+          <div class="portfolio-carousel" id="portfolioCarousel">
+            <article class="work-card exhibition reveal" data-category="exhibition" data-project="exhibition" tabindex="0" role="button"><img src="assets/selected-work/exhibition.jpg" loading="lazy" alt="Blue Ocean exhibition stand"><div><span>Exhibition</span><h3>Blue Ocean exhibition stand</h3></div></article>
+            <article class="work-card pos reveal" data-category="pos" data-project="pos" tabindex="0" role="button"><img src="assets/selected-work/exhibition1.jpg" loading="lazy" alt="Blue Ocean product display unit"><div><span>POS</span><h3>Blue Ocean display installation</h3></div></article>
+            <article class="work-card exhibition reveal" data-category="exhibition" data-project="exhibition" tabindex="0" role="button"><img src="assets/selected-work/exhibition2.jpg" loading="lazy" alt="Exhibition environment"><div><span>Exhibition</span><h3>Custom exhibition environment</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-1" tabindex="0" role="button"><img src="assets/selected-work/stage1-1.jpg" loading="lazy" alt="Stage 1 project 1"><div><span>Stage 1</span><h3>Stage project 01</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-1" tabindex="0" role="button"><img src="assets/selected-work/stage2.jpg" loading="lazy" alt="Stage 1 project 2"><div><span>Stage 1</span><h3>Stage project 02</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-1" tabindex="0" role="button"><img src="assets/selected-work/stage3.jpg" loading="lazy" alt="Stage 1 project 3"><div><span>Stage 1</span><h3>Stage project 03</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-a" tabindex="0" role="button"><img src="assets/selected-work/stagea1.jpg" loading="lazy" alt="Stage A project 1"><div><span>Stage A</span><h3>Stage project A1</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-a" tabindex="0" role="button"><img src="assets/selected-work/stagea2.jpg" loading="lazy" alt="Stage A project 2"><div><span>Stage A</span><h3>Stage project A2</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-a" tabindex="0" role="button"><img src="assets/selected-work/stagea3.jpg" loading="lazy" alt="Stage A project 3"><div><span>Stage A</span><h3>Stage project A3</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-b" tabindex="0" role="button"><img src="assets/selected-work/stageb1.jpg" loading="lazy" alt="Stage B project 1"><div><span>Stage B</span><h3>Stage project B1</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-b" tabindex="0" role="button"><img src="assets/selected-work/stageb2.jpg" loading="lazy" alt="Stage B project 2"><div><span>Stage B</span><h3>Stage project B2</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-b" tabindex="0" role="button"><img src="assets/selected-work/stageb3.jpg" loading="lazy" alt="Stage B project 3"><div><span>Stage B</span><h3>Stage project B3</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-c" tabindex="0" role="button"><img src="assets/selected-work/stagec1.jpg" loading="lazy" alt="Stage C project 1"><div><span>Stage C</span><h3>Stage project C1</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-c" tabindex="0" role="button"><img src="assets/selected-work/stagec2.jpg" loading="lazy" alt="Stage C project 2"><div><span>Stage C</span><h3>Stage project C2</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-c" tabindex="0" role="button"><img src="assets/selected-work/stagec3.jpg" loading="lazy" alt="Stage C project 3"><div><span>Stage C</span><h3>Stage project C3</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-d" tabindex="0" role="button"><img src="assets/selected-work/staged1.jpg" loading="lazy" alt="Stage D project 1"><div><span>Stage D</span><h3>Stage project D1</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-d" tabindex="0" role="button"><img src="assets/selected-work/staged2.jpg" loading="lazy" alt="Stage D project 2"><div><span>Stage D</span><h3>Stage project D2</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-d" tabindex="0" role="button"><img src="assets/selected-work/staged3.jpg" loading="lazy" alt="Stage D project 3"><div><span>Stage D</span><h3>Stage project D3</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-e" tabindex="0" role="button"><img src="assets/selected-work/stagee1.jpg" loading="lazy" alt="Stage E project 1"><div><span>Stage E</span><h3>Stage project E1</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-e" tabindex="0" role="button"><img src="assets/selected-work/stagee2.jpg" loading="lazy" alt="Stage E project 2"><div><span>Stage E</span><h3>Stage project E2</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-e" tabindex="0" role="button"><img src="assets/selected-work/stagee3.jpg" loading="lazy" alt="Stage E project 3"><div><span>Stage E</span><h3>Stage project E3</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-f" tabindex="0" role="button"><img src="assets/selected-work/stagef1.jpg" loading="lazy" alt="Stage F project 1"><div><span>Stage F</span><h3>Stage project F1</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-f" tabindex="0" role="button"><img src="assets/selected-work/stagef2.jpg" loading="lazy" alt="Stage F project 2"><div><span>Stage F</span><h3>Stage project F2</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-f" tabindex="0" role="button"><img src="assets/selected-work/stagef3.jpg" loading="lazy" alt="Stage F project 3"><div><span>Stage F</span><h3>Stage project F3</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-g" tabindex="0" role="button"><img src="assets/selected-work/stageg1.jpg" loading="lazy" alt="Stage G project 1"><div><span>Stage G</span><h3>Stage project G1</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-g" tabindex="0" role="button"><img src="assets/selected-work/stageg2-1.jpg" loading="lazy" alt="Stage G project 2"><div><span>Stage G</span><h3>Stage project G2</h3></div></article>
+            <article class="work-card stage reveal" data-category="stage" data-project="stage-g" tabindex="0" role="button"><img src="assets/selected-work/stageg3.jpg" loading="lazy" alt="Stage G project 3"><div><span>Stage G</span><h3>Stage project G3</h3></div></article>
+            <article class="work-card lighting reveal" data-category="lighting" data-project="lighting" tabindex="0" role="button"><img src="assets/selected-work/stageh1.jpg" loading="lazy" alt="Remita lighting production"><div><span>Lighting</span><h3>Remita lighting production</h3></div></article>
+            <article class="work-card lighting reveal" data-category="lighting" data-project="lighting" tabindex="0" role="button"><img src="assets/selected-work/stageh2.jpg" loading="lazy" alt="Lighting and special effects project 2"><div><span>Lighting</span><h3>Lighting project 02</h3></div></article>
+            <article class="work-card lighting reveal" data-category="lighting" data-project="lighting" tabindex="0" role="button"><img src="assets/selected-work/stageh3.jpg" loading="lazy" alt="Lighting and special effects project 3"><div><span>Lighting</span><h3>Lighting project 03</h3></div></article>
+          </div>
+          <button class="portfolio-arrow portfolio-next" data-portfolio-next aria-label="Next selected work">→</button>
+          <div class="portfolio-progress" id="portfolioProgress" role="progressbar" aria-label="Selected work carousel position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why section">
+      <div class="container">
+        <div class="section-head why-intro reveal">
+          <p class="eyebrow">WHY CHOOSE US</p>
+          <h2 class="section-title">Precision is part<br><em>of the promise.</em></h2>
+          <p>Be it any stage design or exhibition stand, we are here to help — with a process focused on integrity, professionalism, excellent delivery and speedy execution.</p>
+        </div>
+        <div class="why-cards">
+          <article class="why-card reveal"><span>01</span><h3>Integrity</h3><p>We build relationships through transparency, accountability and dependable service.</p></article>
+          <article class="why-card reveal"><span>02</span><h3>Professionalism</h3><p>Every project is handled with a high standard of communication and craftsmanship.</p></article>
+          <article class="why-card reveal"><span>03</span><h3>Excellent Delivery</h3><p>We coordinate the details so the finished environment arrives ready for the moment.</p></article>
+          <article class="why-card reveal"><span>04</span><h3>Speedy Execution</h3><p>Our process is structured to move quickly without compromising quality.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container cta-inner reveal"><div><p class="eyebrow">READY TO BUILD?</p><h2>Tell us what you have in mind.</h2><p>Our assistant will guide you to the right service and contact option.</p></div><button class="btn btn-dark" data-estimate>Start a free estimate</button></div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="section-head reveal"><p class="eyebrow">CONTACT</p><h2>Let’s build your<br><em>next experience.</em></h2><p>Have a stage in mind? Tell us what you need and we’ll take it from there.</p></div>
+        <div class="contact-grid">
+          <div class="contact-details reveal">
+            <div class="contact-item"><span class="contact-icon" aria-hidden="true">📍</span><div><small>VISIT US</small><p>TEX HOUSE, 1ST FLOOR,<br>20 UNITY ROAD, OFF TOYIN STREET,<br>IKEJA, LAGOS, NIGERIA.</p></div></div>
+            <div class="contact-item"><span class="contact-icon">☎</span><div><small>CALL US</small><p><a href="tel:+2348033070460">+234 803 307 0460</a><br><a href="tel:+2348099135555">+234 809 913 5555</a></p></div></div>
+            <div class="contact-item"><span class="contact-icon">@</span><div><small>EMAIL</small><p><a href="mailto:info@stagemakerz.net">info@stagemakerz.net</a></p></div></div>
+            <div class="social-row">
+              <a href="https://www.facebook.com/stagemakerz" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://www.twitter.com/stagemakerznet" target="_blank" rel="noopener">X</a>
+              <a href="https://www.instagram.com/stagemakerzcompany/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+          <div class="map-card" aria-label="Map showing the Stagemakerz office location">
+            <iframe title="Stagemakerz office location, Tex House, Ikeja" src="https://www.google.com/maps?q=Tex+House,+20+Unity+Road,+Ikeja,+Lagos,+Nigeria&amp;z=16&amp;output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a class="map-open" href="https://www.google.com/maps/search/?api=1&amp;query=Tex+House,+20+Unity+Road,+Ikeja,+Lagos,+Nigeria" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><span>© 2026 Stagemakerz Company</span><span>Stage • Set • Design • Experience</span></div></footer>
+
+  <div class="chat-launcher" id="chatLauncher"><button aria-label="Open Stagemakerz assistant"><span class="human-assistant-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="7.2" r="3.2"></circle><path d="M5.5 20c.8-4.1 3-6.1 6.5-6.1s5.7 2 6.5 6.1"></path></svg></span><b>Need help?</b></button></div>
+  <aside class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="chatTitle" tabindex="-1">
+    <div class="chat-head"><div><small>STAGEMAKERZ ASSISTANT</small><strong id="chatTitle">Let’s plan your project.</strong></div><button id="chatClose" type="button" aria-label="Close assistant">×</button></div>
+    <div class="chat-body">
+      <p class="chat-intro">Choose a service, then describe the kind of stage or event environment you want.</p>
+      <label for="serviceChoice">Service</label>
+      <select id="serviceChoice">
+        <option value="">Select a service</option>
+        <option>Stage Set Design</option><option>Exhibition Stands</option><option>Product Display Units</option><option>Lighting & Special Effects</option>
+      </select>
+      <div id="serviceOptions" class="service-options" hidden>
+        <label for="serviceRequirement">What do you need?</label>
+        <select id="serviceRequirement"></select>
+        <label for="serviceFeature">Preferred features</label>
+        <select id="serviceFeature"></select>
+      </div>
+      <label for="eventType">Event / occasion</label><input id="eventType" type="text" placeholder="e.g. Conference, awards, concert">
+      <label for="stateChoice">Project location / state</label><select id="stateChoice"><option value="">Select a state</option></select>
+      <label for="projectSize">Size / venue</label><input id="projectSize" type="text" placeholder="e.g. 20ft stage, 500 guests">
+      <label for="projectBrief">Describe what you want</label><textarea id="projectBrief" rows="4" placeholder="Tell us the look, layout, screens, colours, branding or anything important..."></textarea>
+      <div class="chat-actions"><button class="btn btn-primary" id="chatContinue">Continue</button><button class="btn btn-outline" id="chatCall">Call</button><button class="btn btn-whatsapp" id="chatWhatsApp">WhatsApp</button></div>
+      <div class="chat-status" id="chatStatus" role="status"></div>
+    </div>
+  </aside>
+  <div class="chat-backdrop" id="chatBackdrop"></div>
+
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Selected work image" aria-hidden="true" hidden>
+    <div class="gallery-backdrop" data-gallery-close></div>
+    <div class="gallery-dialog">
+      <div class="gallery-topbar"><span id="galleryCount">1 / 30</span><div class="gallery-actions"><button type="button" class="gallery-icon-btn" id="galleryFullscreen" aria-label="View fullscreen">⛶</button><button type="button" class="gallery-icon-btn" id="galleryZoom" aria-label="Zoom in" aria-pressed="false">＋</button><button type="button" class="gallery-icon-btn" id="galleryShare" aria-label="Share image" aria-expanded="false">↗</button><button type="button" class="gallery-icon-btn" data-gallery-close aria-label="Close image">×</button></div></div>
+      <button type="button" class="gallery-nav gallery-nav-prev" id="galleryPrev" aria-label="Previous image">←</button>
+      <figure><img id="galleryImage" src="" alt=""><figcaption id="galleryCaption"></figcaption></figure>
+      <button type="button" class="gallery-nav gallery-nav-next" id="galleryNext" aria-label="Next image">→</button>
+      <div class="gallery-share-menu" id="galleryShareMenu" hidden><a id="shareFacebook" target="_blank" rel="noopener">Share on Facebook</a><a id="shareInstagram" target="_blank" rel="noopener">Share on Instagram</a><a id="shareX" target="_blank" rel="noopener">Share on X</a><a id="sharePinterest" target="_blank" rel="noopener">Pin it</a><a id="galleryDownload" download>Download image</a><small id="galleryShareStatus">Instagram opens with the image link ready to copy.</small></div>
+    </div>
+  </div>
+
+  <script src="js/app.js?v=gallery-lightbox-3" defer></script>
+</body>
+</html>
