@@ -664,12 +664,37 @@ body.gallery-open{overflow:hidden}.work-card{cursor:pointer}.work-card:focus-vis
 .map-card .map-open{position:absolute;left:50%;bottom:22px;z-index:1;transform:translateX(-50%);padding:12px 18px;border-radius:999px;background:#fff;color:#171518;font-size:12px;font-weight:900;white-space:nowrap;box-shadow:0 10px 24px rgba(0,0,0,.22);transition:transform .2s ease,background .2s ease,color .2s ease}
 .map-card .map-open:hover{background:var(--red);color:#fff;transform:translateX(-50%) translateY(-2px)}
 
-/* Frame the hero image with an elegant brand-red gradient. */
-.motion-visual .motion-main{
-  border:3px solid transparent!important;
-  background:
-    linear-gradient(#0b0f18,#0b0f18) padding-box,
-    linear-gradient(135deg,#8e0d14 0%,#ff4d55 42%,#e21a22 68%,#7d0b11 100%) border-box!important;
+/* Hero slide progress. */
+.hero-slide-indicators{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:max-content;
+  margin:16px auto 0;
+  padding:8px;
+  border-radius:999px;
+  background:rgba(10,12,16,.38);
+  backdrop-filter:blur(6px);
+}
+.hero-slide-indicator{
+  width:8px;
+  height:8px;
+  border:1px solid rgba(255,255,255,.82);
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 1px 4px rgba(0,0,0,.3);
+  transition:width .28s ease,background .28s ease,border-color .28s ease;
+}
+.hero-slide-indicator.active{
+  width:18px;
+  border-color:var(--red);
+  background:var(--red);
+}
+@media(max-width:760px){
+  .hero-slide-indicators{margin-top:14px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-slide-indicator{transition:none;}
 }
 
 /* Specialist services: a clear, icon-led list. */

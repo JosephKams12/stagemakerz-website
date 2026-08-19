@@ -39,6 +39,19 @@ document.addEventListener("DOMContentLoaded",()=>{
   },{threshold:.12});
   $$(".reveal").forEach(el=>revealObserver.observe(el));
 
+  // Keep the hero slide indicator in sync with the six-second image rotation.
+  const heroIndicators=$$(".hero-slide-indicator");
+  if(heroIndicators.length){
+    let activeHeroSlide=0;
+    const setActiveHeroSlide=index=>{
+      activeHeroSlide=index;
+      heroIndicators.forEach((indicator,indicatorIndex)=>indicator.classList.toggle("active",indicatorIndex===activeHeroSlide));
+    };
+    if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+      window.setInterval(()=>setActiveHeroSlide((activeHeroSlide+1)%heroIndicators.length),6000);
+    }
+  }
+
   // Give the project cards a subtle, pointer-led depth response without a heavy animation library.
   const motionCards=$$(".service-card, .work-card, .why-card, .contact-details, .map-card");
   motionCards.forEach((card,index)=>{
