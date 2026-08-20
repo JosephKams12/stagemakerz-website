@@ -693,6 +693,10 @@ body.gallery-open{overflow:hidden}.work-card{cursor:pointer}.work-card:focus-vis
   background:var(--red);
 }
 .hero-slide-indicator:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Keep the assistant header visible when a mobile viewport becomes short. */
+.chat-panel{max-height:calc(100dvh - 110px);display:flex;flex-direction:column}
+.chat-body{flex:1;min-height:0;max-height:none}
 @media(max-width:760px){
   .hero-slide-indicators{margin-top:14px;}
 }
