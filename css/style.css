@@ -642,6 +642,7 @@ body.gallery-open{overflow:hidden}.work-card{cursor:pointer}.work-card:focus-vis
 
 /* On phones, show one complete selected-work image per carousel page. */
 @media(max-width:760px){
+  .process-grid{gap:12px;}
   .portfolio-carousel .work-card{
     flex:0 0 100%;
     scroll-snap-stop:always;
