@@ -39,14 +39,21 @@ document.addEventListener("DOMContentLoaded",()=>{
   },{threshold:.12});
   $$(".reveal").forEach(el=>revealObserver.observe(el));
 
-  // Keep the hero slide indicator in sync with the six-second image rotation.
+  // Keep the hero image controls in sync with the six-second image rotation.
   const heroIndicators=$$(".hero-slide-indicator");
+  const heroScenes=$$(".motion-scene");
   if(heroIndicators.length){
     let activeHeroSlide=0;
     const setActiveHeroSlide=index=>{
       activeHeroSlide=index;
-      heroIndicators.forEach((indicator,indicatorIndex)=>indicator.classList.toggle("active",indicatorIndex===activeHeroSlide));
+      heroIndicators.forEach((indicator,indicatorIndex)=>{
+        const isActive=indicatorIndex===activeHeroSlide;
+        indicator.classList.toggle("active",isActive);
+        indicator.setAttribute("aria-pressed",String(isActive));
+      });
+      heroScenes.forEach((scene,sceneIndex)=>scene.classList.toggle("active",sceneIndex===activeHeroSlide));
     };
+    heroIndicators.forEach((indicator,index)=>indicator.addEventListener("click",()=>setActiveHeroSlide(index)));
     if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
       window.setInterval(()=>setActiveHeroSlide((activeHeroSlide+1)%heroIndicators.length),6000);
     }

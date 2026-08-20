@@ -619,12 +619,11 @@ body.gallery-open{overflow:hidden}.work-card{cursor:pointer}.work-card:focus-vis
 /* Hero photos: display each active slide at full, unfiltered opacity. */
 .motion-visual .motion-scene{
   filter:none!important;
-  animation:heroSceneSwitch 24s cubic-bezier(.4,0,.2,1) infinite!important;
+  animation:none!important;
+  opacity:0!important;
+  transition:opacity .45s cubic-bezier(.4,0,.2,1);
 }
-.motion-visual .motion-scene.scene-1{animation-delay:0s!important}
-.motion-visual .motion-scene.scene-2{animation-delay:6s!important}
-.motion-visual .motion-scene.scene-3{animation-delay:12s!important}
-.motion-visual .motion-scene.scene-4{animation-delay:18s!important}
+.motion-visual .motion-scene.active{opacity:1!important}
 .motion-visual .motion-main::after{display:none}
 .motion-visual .motion-glow{display:none}
 .motion-visual::before,.motion-visual::after{display:none}
@@ -677,6 +676,8 @@ body.gallery-open{overflow:hidden}.work-card{cursor:pointer}.work-card:focus-vis
   backdrop-filter:blur(6px);
 }
 .hero-slide-indicator{
+  padding:0;
+  cursor:pointer;
   width:8px;
   height:8px;
   border:1px solid rgba(255,255,255,.82);
@@ -690,6 +691,7 @@ body.gallery-open{overflow:hidden}.work-card{cursor:pointer}.work-card:focus-vis
   border-color:var(--red);
   background:var(--red);
 }
+.hero-slide-indicator:focus-visible{outline:2px solid #fff;outline-offset:3px}
 @media(max-width:760px){
   .hero-slide-indicators{margin-top:14px;}
 }
