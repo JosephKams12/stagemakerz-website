@@ -570,8 +570,8 @@
 /* What we do: a clean charcoal stage surface, without a background gradient. */
 .services{background:#121214}
 
-/* Selected work: hover is typographic; the red fill remains reserved for the active filter. */
-.portfolio .filter:hover:not(.active){background:rgba(255,255,255,.55);border-color:rgba(17,17,17,.22);color:var(--dark);font-weight:900}.portfolio-carousel .work-card h3{transition:font-weight .22s ease,letter-spacing .22s ease}.portfolio-carousel .work-card:hover h3{font-weight:900;letter-spacing:-.015em}
+/* Selected work: filter text uses the brand red on hover. */
+.portfolio .filter:hover:not(.active){background:rgba(255,255,255,.55);border-color:rgba(17,17,17,.22);color:var(--red);font-weight:900}.portfolio-carousel .work-card h3{transition:font-weight .22s ease,letter-spacing .22s ease}.portfolio-carousel .work-card:hover h3{font-weight:900;letter-spacing:-.015em}
 
 /* Keep card hovers tactile and clean: no pointer-following light effects. */
 .services .service-card::after,.services .service-card:hover::after,.why-card::after,.why-card:hover::after{display:none}
