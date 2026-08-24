@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Stagemakerz Company — stage sets, exhibition stands, product displays, lighting and event environments.">
   <title>Stagemakerz Company — The Right Stage, Set & Design For You</title>
-  <link rel="stylesheet" href="css/style.css?v=static-map-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=rocket-inspired-7">
   <style>
     /* Critical gallery overlay rules: keep the viewer above Selected Work, never in page flow. */
     #galleryLightbox[hidden]{display:none!important}
@@ -46,33 +49,29 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <p class="eyebrow">STAGEMAKERZ COMPANY</p>
-          <h1>The right stage,<br><span>set & design</span><br>for you.</h1>
-          <p class="hero-lead">We craft experiences that help events stand out — from stage sets and exhibition stands to lighting, display units and bespoke event environments.</p>
+          <span class="hero-rule" aria-hidden="true"></span>
+          <h1>The Right Stage Set<br>&amp; <span>Design For You</span></h1>
+          <p class="hero-lead">We are Specialists in Designs, Stage sets, Pavilion, Point of Sales, Set Lighting and Display Units. As Architects, we understand designs in 3D (three dimensions), providing depth to clients’ briefs and their execution. We understand how various designs come together to form a whole.</p>
           <div class="button-row">
-            <button class="btn btn-primary" data-estimate>Get Free Estimate</button>
-            <a class="btn btn-ghost" href="#portfolio">Explore Our Work</a>
-          </div>
-          <div class="hero-proof">
-            <span>Architecture-led</span><i></i><span>Design • Build • Deliver</span>
+            <button class="btn btn-primary" data-estimate>Start a project</button>
+            <a class="btn btn-ghost" href="#portfolio">Explore our work</a>
           </div>
         </div>
         <div class="hero-visual reveal">
           <div class="motion-visual" aria-label="Animated showcase of Stagemakerz stage, exhibition, display and lighting work">
             <div class="motion-glow" aria-hidden="true"></div>
             <div class="motion-main">
-              <img class="motion-scene scene-1 active" src="assets/stagemakerz_stage_clean.jpg" alt="Live event stage with dramatic lighting and audience" fetchpriority="high" decoding="async" referrerpolicy="no-referrer">
-              <img class="motion-scene scene-2" src="assets/stagemakerz_brand_stage.jpg" alt="Wide live-event stage with concert lighting and audience" decoding="async" referrerpolicy="no-referrer">
+              <img class="motion-scene scene-1 active" src="assets/video/stagemakerz-stage-reel.webp" data-motion data-static-src="assets/stagemakerz_stage_clean.jpg" alt="Animated Stagemakerz stage-set showcase" fetchpriority="high" decoding="async">
+              <img class="motion-scene scene-2" src="assets/video/stagemakerz-exhibition-reel.webp" data-motion data-static-src="assets/selected-work/exhibition.jpg" alt="Animated Stagemakerz exhibition showcase" decoding="async">
               <img class="motion-scene scene-3" src="assets/stage only.png" alt="Large outdoor stage prepared for an event" decoding="async">
               <img class="motion-scene scene-4" src="assets/selected-work/stageh1.jpg" alt="Completed indoor event production with stage lighting" decoding="async">
-              <span class="motion-line motion-line-a" aria-hidden="true"></span>
-              <span class="motion-line motion-line-b" aria-hidden="true"></span>
             </div>
           </div>
-          <div class="hero-slide-indicators" aria-label="Choose hero image">
-            <button class="hero-slide-indicator active" type="button" aria-label="Show hero image 1" aria-pressed="true"></button>
-            <button class="hero-slide-indicator" type="button" aria-label="Show hero image 2" aria-pressed="false"></button>
-            <button class="hero-slide-indicator" type="button" aria-label="Show hero image 3" aria-pressed="false"></button>
-            <button class="hero-slide-indicator" type="button" aria-label="Show hero image 4" aria-pressed="false"></button>
+          <div class="hero-slide-indicators" aria-label="Choose hero showcase">
+            <button class="hero-slide-indicator active" type="button" aria-label="Show animated stage-set showcase" aria-pressed="true"></button>
+            <button class="hero-slide-indicator" type="button" aria-label="Show animated exhibition showcase" aria-pressed="false"></button>
+            <button class="hero-slide-indicator" type="button" aria-label="Show outdoor-stage showcase" aria-pressed="false"></button>
+            <button class="hero-slide-indicator" type="button" aria-label="Show indoor-event showcase" aria-pressed="false"></button>
           </div>
         </div>
       </div>
@@ -94,8 +93,8 @@
     <section id="about" class="section about">
       <div class="container split-grid">
         <div class="reveal">
-          <p class="eyebrow">ABOUT US</p>
-          <h2>Built by architects.<br><em>Designed for impact.</em></h2>
+          <p class="eyebrow">OUR POINT OF VIEW</p>
+          <h2>Built with clarity.<br><em>Designed to be remembered.</em></h2>
           <p>We understand designs in 3D and how different elements come together to form a whole. Our goal is to turn your brief into an environment that feels intentional, memorable and professionally executed.</p>
           <p>From the first brief to final handover, we combine design thinking, production discipline and hands-on delivery.</p>
           <a class="text-link" href="#contact">Talk to our team <span>↗</span></a>
@@ -129,8 +128,8 @@
     <section id="services" class="section services">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">WHAT WE DO</p><h2>Services built to make<br><em>your event unforgettable.</em></h2>
-          <p>Select a service to explore related work in the portfolio.</p>
+          <p class="eyebrow">OUR EXPERTISE</p><h2>Every detail, made<br><em>for the moment.</em></h2>
+          <p>One focused team, from the first idea to a flawless live environment.</p>
         </div>
         <div class="service-track-wrap">
           <button class="slider-btn prev" data-service-prev aria-label="Previous service">←</button>
@@ -292,6 +291,6 @@
     </div>
   </div>
 
-  <script src="js/app.js?v=gallery-lightbox-3" defer></script>
+  <script src="js/app.js?v=motion-hero-2" defer></script>
 </body>
 </html>

@@ -39,9 +39,18 @@ document.addEventListener("DOMContentLoaded",()=>{
   },{threshold:.12});
   $$(".reveal").forEach(el=>revealObserver.observe(el));
 
-  // Keep the hero image controls in sync with the six-second image rotation.
+  // Keep the hero controls in sync with the six-second image rotation.
   const heroIndicators=$$(".hero-slide-indicator");
   const heroScenes=$$(".motion-scene");
+  const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)");
+  // Animated WebP is a video-like treatment; swap to a still frame for visitors
+  // who explicitly prefer reduced motion.
+  if(reducedMotion.matches){
+    $$('[data-motion][data-static-src]').forEach(scene=>{
+      scene.src=scene.dataset.staticSrc;
+      scene.removeAttribute("data-motion");
+    });
+  }
   if(heroIndicators.length){
     let activeHeroSlide=0;
     const setActiveHeroSlide=index=>{
@@ -54,7 +63,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       heroScenes.forEach((scene,sceneIndex)=>scene.classList.toggle("active",sceneIndex===activeHeroSlide));
     };
     heroIndicators.forEach((indicator,index)=>indicator.addEventListener("click",()=>setActiveHeroSlide(index)));
-    if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+    if(!reducedMotion.matches){
       window.setInterval(()=>setActiveHeroSlide((activeHeroSlide+1)%heroIndicators.length),6000);
     }
   }
