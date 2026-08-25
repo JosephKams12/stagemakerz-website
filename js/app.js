@@ -26,7 +26,29 @@ document.addEventListener("DOMContentLoaded",()=>{
     nav?.classList.remove("open");
     menu?.setAttribute("aria-expanded","false");
   };
-  $$(".nav-link").forEach(a=>a.addEventListener("click",closeNav));
+  const closeMegaMenus=except=>{
+    $$(".nav-item.has-mega",nav).forEach(item=>{
+      if(item===except)return;
+      item.classList.remove("mega-open");
+    });
+  };
+  $$(".nav-link",nav).forEach(a=>a.addEventListener("click",event=>{
+    const item=a.closest(".nav-item.has-mega");
+    if(matchMedia("(max-width: 760px)").matches&&item&&!item.classList.contains("mega-open")){
+      event.preventDefault();
+      closeMegaMenus(item);
+      item.classList.add("mega-open");
+      return;
+    }
+    closeMegaMenus();
+    closeNav();
+  }));
+  document.addEventListener("click",event=>{
+    if(!nav?.contains(event.target))closeMegaMenus();
+  });
+  document.addEventListener("keydown",event=>{
+    if(event.key==="Escape")closeMegaMenus();
+  });
 
   // Header shadow.
   const onScroll=()=>header.classList.toggle("scrolled",scrollY>12);

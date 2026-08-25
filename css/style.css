@@ -955,3 +955,236 @@ body{font-family:Poppins,Inter,ui-sans-serif,system-ui,sans-serif;background:#ff
 .about .split-grid p{color:#414146!important}
 @media(min-width:761px){.portfolio-carousel .work-card:hover{transform:scale(.72)!important;box-shadow:0 16px 32px rgba(17,17,17,.18)!important}.portfolio-carousel .work-card.is-featured:hover{transform:scale(1.14)!important;box-shadow:0 24px 48px rgba(17,17,17,.28)!important}}
 @media(max-width:760px){.portfolio-carousel .work-card:hover{transform:scale(.72)!important}.portfolio-carousel .work-card.is-featured:hover{transform:scale(1.12)!important}}
+
+/* Increased reading scale across text-led sections. */
+.hero-lead,
+.section-head>p:last-child,
+.split-grid p,
+.why p {
+  font-size:19px !important;
+  line-height:1.7;
+}
+.process-item p,
+.card-body p,
+.why-card p,
+.accordion-item p,
+.contact-item p {
+  font-size:16px !important;
+  line-height:1.65;
+}
+.process-item span,
+.card-number,
+.work-card span,
+.contact-item small,
+.eyebrow,
+.section-eyebrow {
+  font-size:13px !important;
+}
+.nav-link,
+.btn,
+.text-link,
+.filter,
+.social-row a,
+.map-button {
+  font-size:15px !important;
+}
+.card-body h3,
+.work-card h3,
+.accordion-item span,
+.map-label strong {
+  font-size:20px !important;
+}
+.chat-intro,
+.chat-body label,
+.chat-body input,
+.chat-body select,
+.chat-body textarea,
+.chat-status,
+.footer-inner,
+.chat-launcher b {
+  font-size:14px !important;
+}
+
+@media(max-width:760px){
+  .hero-lead,
+  .section-head>p:last-child,
+  .split-grid p,
+  .why p { font-size:18px !important; }
+  .process-item p,
+  .card-body p,
+  .why-card p,
+  .accordion-item p,
+  .contact-item p { font-size:15px !important; }
+  .nav-link,
+  .btn,
+  .text-link,
+  .filter,
+  .social-row a,
+  .map-button { font-size:14px !important; }
+}
+
+/* Mobile expertise cards: give each service enough room for its full copy and CTA. */
+@media(max-width:760px){
+  .services .service-track{
+    grid-template-columns:1fr !important;
+    gap:20px !important;
+  }
+  .services .service-track .service-card{
+    min-height:0 !important;
+    height:auto !important;
+    overflow:visible !important;
+  }
+  .services .service-image{
+    flex:0 0 170px !important;
+    height:170px !important;
+  }
+  .services .card-body{
+    padding:20px !important;
+  }
+  .services .card-body p{
+    margin-bottom:18px !important;
+    line-height:1.6 !important;
+  }
+  .services .service-portfolio{
+    margin-top:0 !important;
+    padding:11px 15px !important;
+    font-size:14px !important;
+  }
+}
+
+/* Studio-clean media treatment: preserve source detail with balanced tonal clarity. */
+.about-media img,
+.service-image img,
+.work-card img,
+.gallery-dialog figure img,
+.motion-visual .motion-scene {
+  image-rendering:auto;
+  backface-visibility:hidden;
+  transform:translateZ(0);
+}
+.about-media img,
+.service-image img,
+.work-card img,
+.gallery-dialog figure img {
+  filter:brightness(1.035) contrast(1.08) saturate(1.07) !important;
+}
+.motion-visual .motion-scene {
+  filter:brightness(1.06) contrast(1.08) saturate(1.08) !important;
+}
+.service-card:hover .service-image img,
+.work-card:hover img {
+  filter:brightness(1.05) contrast(1.1) saturate(1.09) !important;
+}
+
+/* Clean editorial finish: crisp, high-contrast typography throughout. */
+body {
+  color:#15171a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-synthesis:none;
+  text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4,
+.nav-link,
+.btn,
+.filter,
+.text-link,
+.accordion-item span {
+  text-rendering:geometricPrecision;
+}
+p,
+.nav-link,
+.btn,
+.filter,
+.text-link,
+.contact-item p,
+.footer-inner {
+  letter-spacing:.005em;
+}
+.section-head>p:last-child,
+.split-grid p,
+.services .section-head>p:last-child,
+.services .card-body p,
+.portfolio-head>p {
+  color:#3f4748 !important;
+  font-weight:500;
+}
+.about .split-grid p {
+  color:#3b4145 !important;
+}
+.card-body h3,
+.work-card h3,
+.section-head h2,
+.split-grid h2,
+.why h2 {
+  font-weight:800;
+}
+.nav-link {
+  color:#343a40;
+  font-weight:650;
+}
+.nav-link.active,
+.nav-link:hover {
+  color:#101114;
+}
+.process .process-intro,
+.process-item p,
+.why .section-head>p:last-child,
+.why-card p {
+  color:rgba(255,255,255,.88) !important;
+  font-weight:500;
+}
+.contact-item small {
+  color:rgba(255,255,255,.78) !important;
+}
+.contact-item p,
+.contact-item a,
+.social-row a {
+  color:#fff !important;
+}
+.btn-primary {
+  box-shadow:0 8px 22px rgba(226,26,34,.20);
+}
+
+/* Navigation mega panels: concise summaries drawn from each page section. */
+.nav-item{position:relative;display:block}.nav-item .nav-link{display:block;padding:8px 0 6px!important;border-bottom:2px solid rgba(16,17,20,.2);transition:color .2s ease,border-color .2s ease}.nav-item:hover>.nav-link,.nav-item:focus-within>.nav-link,.nav-item.mega-open>.nav-link,.nav-item>.nav-link.active{border-color:var(--red)}
+.mega-menu{position:fixed;z-index:60;top:100px;left:50%;width:min(720px,calc(100vw - 48px));padding:30px 34px 32px;display:grid;gap:10px;border:1px solid rgba(21,23,26,.10);background:rgba(255,255,255,.98);box-shadow:0 22px 55px rgba(17,24,39,.16);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-8px);transition:opacity .18s ease,visibility .18s ease,transform .22s ease}
+.nav-item:hover .mega-menu,.nav-item:focus-within .mega-menu,.nav-item.mega-open .mega-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.mega-kicker{margin:0;color:var(--red);font-size:11px!important;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.mega-menu h2{max-width:620px;margin:0;color:#101114;font-size:clamp(24px,3vw,36px)!important;line-height:1.05!important;letter-spacing:-.035em;text-transform:none!important}.mega-menu>p:not(.mega-kicker){max-width:650px;margin:0;color:#4b5356;font-size:15px!important;line-height:1.65}.mega-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}.mega-links a,.mega-links button{display:inline-flex;align-items:center;gap:9px;padding:10px 0;border:0;background:transparent;color:#15171a;font:inherit!important;font-size:13px!important;font-weight:800;text-decoration:none;cursor:pointer}.mega-links a:first-child,.mega-links button:first-child{color:var(--red)}.mega-links span{font-size:17px;line-height:1}.mega-service-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:8px;background:rgba(21,23,26,.12)}.mega-service-list a{display:flex;gap:10px;align-items:center;padding:14px 15px;background:#fff;color:#15171a;font-size:14px;font-weight:700}.mega-service-list a:hover,.mega-service-list a:focus-visible{background:#101114;color:#fff;outline:0}.mega-service-list b{color:var(--red);font-size:11px;letter-spacing:.08em}.mega-service-list a:hover b,.mega-service-list a:focus-visible b{color:#ff6b70}
+@media(max-width:760px){.nav-item .nav-link{padding:10px 0 8px!important}.mega-menu{position:static;width:100%;margin:0;padding:16px 0 6px;border:0;border-top:1px solid rgba(21,23,26,.12);box-shadow:none;background:transparent;transform:none;display:none;opacity:1;visibility:visible;pointer-events:auto}.nav-item:hover .mega-menu,.nav-item:focus-within .mega-menu{display:none;transform:none}.nav-item.mega-open .mega-menu{display:grid;transform:none}.mega-menu h2{font-size:22px!important}.mega-menu>p:not(.mega-kicker){font-size:14px!important}.mega-service-list{grid-template-columns:1fr}.mega-service-list a{padding:11px 0;background:transparent}.mega-service-list a:hover,.mega-service-list a:focus-visible{background:transparent;color:#15171a}.mega-links{display:grid;gap:2px}.mega-links a,.mega-links button{padding:7px 0}.nav-cta{margin-top:12px!important}}
+
+/* Selected Work: bright, studio-clean project imagery with a lighter caption veil. */
+.portfolio-carousel .work-card img {
+  filter:brightness(1.16) contrast(1.1) saturate(1.12) !important;
+}
+.portfolio-carousel .work-card::after {
+  background:linear-gradient(180deg,rgba(4,4,5,0) 44%,rgba(4,4,5,.56) 100%) !important;
+}
+.portfolio-carousel .work-card:hover img {
+  filter:brightness(1.2) contrast(1.12) saturate(1.14) !important;
+}
+.gallery-dialog figure img {
+  filter:brightness(1.1) contrast(1.08) saturate(1.1) !important;
+}
+
+/* Apply the same bright, high-clarity studio grade to all site photography and video. */
+img,
+video {
+  filter:brightness(1.12) contrast(1.09) saturate(1.1) !important;
+  image-rendering:auto;
+  backface-visibility:hidden;
+}
+.brand img {
+  filter:none !important;
+}
+body .about-media img,
+body .service-image img,
+body .work-card img,
+body .why-image img,
+body .motion-visual .motion-scene,
+body .gallery-dialog figure img {
+  filter:brightness(1.12) contrast(1.09) saturate(1.1) !important;
+}
+body .portfolio-carousel .work-card img {
+  filter:brightness(1.16) contrast(1.1) saturate(1.12) !important;
+}
