@@ -913,8 +913,9 @@ body{font-family:Poppins,Inter,ui-sans-serif,system-ui,sans-serif;background:#ff
 
 /* Our Expertise: a two-by-two image-card grid beside the section introduction. */
 .services{background:#f7f7ef!important}
-.services>.container{display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);gap:clamp(40px,6vw,88px);align-items:start}
+.services>.container{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(240px,.72fr);gap:clamp(40px,6vw,88px);align-items:start}
 .services .service-track-wrap{max-width:none;margin:0!important}
+@media(min-width:901px){.services .section-head{grid-column:2}.services .service-track-wrap{grid-column:1;grid-row:1}}
 .services .service-track{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 24px!important;overflow:visible!important;padding:0!important}
 .services .service-card{display:flex!important;min-height:330px!important;border:0!important;border-radius:22px!important;overflow:hidden!important;box-shadow:0 14px 28px rgba(39,55,52,.12)!important;transform:none!important}
 .services .service-card:nth-child(1){background:#fff!important;color:#1b2a2a!important}.services .service-card:nth-child(2){background:var(--red)!important;color:#fff!important}.services .service-card:nth-child(3){background:#073e3b!important;color:#fff!important}.services .service-card:nth-child(4){background:#f4e5e6!important;color:#1b2a2a!important}
@@ -1224,3 +1225,31 @@ body .portfolio-carousel .work-card img {
 @media(max-width:760px){
   #megaServices .mega-service-list a { padding:8px 0; }
 }
+
+/* Thumbnail for the Who We Are navigation panel. */
+#megaAbout .mega-about-summary {
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+}
+#megaAbout .mega-about-thumb {
+  flex:0 0 82px;
+  width:82px;
+  height:82px;
+  object-fit:cover;
+}
+#megaAbout .mega-about-summary p {
+  max-width:650px;
+  margin:8px 0 0;
+  color:#4b5356;
+  font-size:15px!important;
+  line-height:1.65;
+}
+@media(max-width:760px){
+  #megaAbout .mega-about-summary { gap:14px; }
+  #megaAbout .mega-about-thumb { flex-basis:64px; width:64px; height:64px; }
+}
+
+/* Keep the hero copy unchanged while justifying the site's paragraph text. */
+p { text-align:justify; }
+.hero p { text-align:left; }
