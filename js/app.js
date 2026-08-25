@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   motionCards.forEach((card,index)=>{
     card.style.setProperty("--card-index",index);
     card.addEventListener("pointermove",event=>{
-      if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if(event.pointerType!=="mouse"||reducedMotion.matches) return;
       const rect=card.getBoundingClientRect();
       card.style.setProperty("--pointer-x",`${((event.clientX-rect.left)/rect.width)*100}%`);
       card.style.setProperty("--pointer-y",`${((event.clientY-rect.top)/rect.height)*100}%`);
@@ -201,9 +201,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
     const nextIndex=Math.max(0,Math.min(cards.length-1,currentIndex+direction));
     if(nextIndex===currentIndex) return;
-    const targetRect=cards[nextIndex].getBoundingClientRect();
-    const targetCentre=targetRect.left+targetRect.width/2;
-    portfolioCarousel.scrollBy({left:targetCentre-carouselCentre,behavior:"smooth"});
+    const target=cards[nextIndex];
+    const targetLeft=target.offsetLeft-(portfolioCarousel.clientWidth-target.offsetWidth)/2;
+    portfolioCarousel.scrollTo({left:targetLeft,behavior:"smooth"});
   };
   $("[data-portfolio-prev]")?.addEventListener("click",()=>movePortfolio(-1));
   $("[data-portfolio-next]")?.addEventListener("click",()=>movePortfolio(1));
@@ -214,8 +214,17 @@ document.addEventListener("DOMContentLoaded",()=>{
     portfolioProgress.style.setProperty("--portfolio-progress",`${progress}%`);
     portfolioProgress.setAttribute("aria-valuenow",String(Math.round(progress)));
   };
-  portfolioCarousel?.addEventListener("scroll",()=>requestAnimationFrame(()=>{updatePortfolioProgress();refreshPortfolioFocus()}),{passive:true});
-  window.addEventListener("resize",()=>{updatePortfolioProgress();refreshPortfolioFocus()});
+  let portfolioRefreshFrame=null;
+  const schedulePortfolioRefresh=()=>{
+    if(portfolioRefreshFrame!==null)return;
+    portfolioRefreshFrame=requestAnimationFrame(()=>{
+      portfolioRefreshFrame=null;
+      updatePortfolioProgress();
+      refreshPortfolioFocus();
+    });
+  };
+  portfolioCarousel?.addEventListener("scroll",schedulePortfolioRefresh,{passive:true});
+  window.addEventListener("resize",schedulePortfolioRefresh);
   updatePortfolioProgress();
   refreshPortfolioFocus();
 

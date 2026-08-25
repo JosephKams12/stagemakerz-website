@@ -879,6 +879,7 @@ body{font-family:Poppins,Inter,ui-sans-serif,system-ui,sans-serif;background:#ff
 }
 
 /* Mobile: retain the desktop carousel's layered, centre-featured composition. */
+.portfolio-carousel .work-card{scroll-snap-align:center!important}
 @media(max-width:760px){
   .portfolio-carousel{gap:0!important;padding:54px calc(50% - 105px) 64px!important;scroll-padding-inline:calc(50% - 105px);scroll-snap-type:x mandatory!important}
   .portfolio-carousel .work-card{flex:0 0 210px!important;min-width:0!important;margin:0 -31px!important;border:0!important;border-radius:11px!important;box-shadow:0 12px 26px rgba(17,17,17,.18)!important;opacity:.56;transform:scale(.72)!important;transform-origin:center;transition:transform .38s cubic-bezier(.2,.8,.2,1),opacity .3s ease,box-shadow .3s ease!important;z-index:1}
@@ -915,21 +916,22 @@ body{font-family:Poppins,Inter,ui-sans-serif,system-ui,sans-serif;background:#ff
 .services>.container{display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);gap:clamp(40px,6vw,88px);align-items:start}
 .services .service-track-wrap{max-width:none;margin:0!important}
 .services .service-track{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 24px!important;overflow:visible!important;padding:0!important}
-.services .service-card{display:flex!important;min-height:380px!important;border:0!important;border-radius:22px!important;overflow:hidden!important;box-shadow:0 14px 28px rgba(39,55,52,.12)!important;transform:none!important}
+.services .service-card{display:flex!important;min-height:330px!important;border:0!important;border-radius:22px!important;overflow:hidden!important;box-shadow:0 14px 28px rgba(39,55,52,.12)!important;transform:none!important}
 .services .service-card:nth-child(1){background:#fff!important;color:#1b2a2a!important}.services .service-card:nth-child(2){background:var(--red)!important;color:#fff!important}.services .service-card:nth-child(3){background:#073e3b!important;color:#fff!important}.services .service-card:nth-child(4){background:#f4e5e6!important;color:#1b2a2a!important}
 .services .service-card:hover{transform:translateY(-6px)!important;box-shadow:0 20px 34px rgba(39,55,52,.18)!important}
-.services .service-image{display:block!important;flex:0 0 188px!important;width:100%!important;height:188px!important;margin:0!important;background:transparent!important;overflow:hidden!important}
+.services .service-image{display:block!important;flex:0 0 155px!important;width:100%!important;height:155px!important;margin:0!important;background:transparent!important;overflow:hidden!important}
 .services .service-image::before{display:none!important}
 .services .service-image img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;filter:none!important;transform:none!important}
-.services .card-body{display:flex!important;flex:1!important;flex-direction:column!important;padding:23px 26px 25px!important;background:transparent!important;color:inherit!important}
+.services .card-body{display:flex!important;flex:1!important;flex-direction:column!important;padding:18px 22px 20px!important;background:transparent!important;color:inherit!important}
 .services .card-number{display:block!important;margin-bottom:6px!important;color:var(--red)!important;font-size:10px!important;font-weight:900!important}
 .services .card-body h3{margin:0 0 8px!important;color:inherit!important;font-size:clamp(19px,2.1vw,25px)!important;line-height:1.12!important;text-transform:none!important;letter-spacing:-.035em!important}
 .services .card-body p,.services .service-card:nth-child(2) .card-body p,.services .service-card:nth-child(3) .card-body p{min-height:0!important;margin:0!important;color:#5c6866!important;font-size:12px!important;line-height:1.58!important}.services .service-card:nth-child(2) .card-body p,.services .service-card:nth-child(3) .card-body p{color:rgba(255,255,255,.78)!important}
 .services .service-portfolio,.services .service-card:nth-child(2) .service-portfolio,.services .service-card:nth-child(3) .service-portfolio{width:max-content!important;margin-top:auto!important;padding:10px 14px!important;border-radius:999px!important;background:#111!important;color:#fff!important;font-size:10px!important;box-shadow:none!important}
 .services .service-portfolio::after{content:"›"!important}
+.services .service-portfolio,.services .service-card:nth-child(2) .service-portfolio,.services .service-card:nth-child(3) .service-portfolio,.services .service-card:hover .service-portfolio,.services .service-portfolio:active,.services .service-portfolio:focus-visible{color:var(--red)!important}
 .services .slider-btn{display:none!important}
 @media(max-width:900px){.services>.container{grid-template-columns:1fr}.services .service-track-wrap{margin-top:34px!important;max-width:620px;margin-inline:auto!important}}
-@media(max-width:760px){.services .service-track-wrap{overflow:visible!important}.services .service-track{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important;overflow:visible!important;padding:0!important}.services .service-track .service-card{flex:none!important;min-width:0!important;min-height:290px!important;scroll-snap-align:none!important}.services .service-image{flex-basis:102px!important;height:102px!important;margin:0!important}.services .card-body{padding:16px 14px 17px!important}.services .card-body h3{font-size:16px!important}.services .card-body p{font-size:10px!important;line-height:1.48!important}.services .service-portfolio{padding:8px 10px!important;font-size:9px!important}}
+@media(max-width:760px){.services .service-track-wrap{overflow:visible!important}.services .service-track{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important;overflow:visible!important;padding:0!important}.services .service-track .service-card{flex:none!important;min-width:0!important;min-height:250px!important;scroll-snap-align:none!important}.services .service-image{flex-basis:86px!important;height:86px!important;margin:0!important}.services .card-body{padding:13px 12px 14px!important}.services .card-body h3{font-size:15px!important}.services .card-body p{font-size:10px!important;line-height:1.42!important}.services .service-portfolio{padding:7px 9px!important;font-size:9px!important}}
 
 /* Selected Work: the red hover line belongs to the filter labels. */
 .portfolio-filter .filter{position:relative!important;border:0!important;border-radius:0!important;background:transparent!important;color:#414146!important}
@@ -948,6 +950,7 @@ body{font-family:Poppins,Inter,ui-sans-serif,system-ui,sans-serif;background:#ff
 
 /* Our Point of View: a calm grey ground with readable copy. */
 .about{background:hsl(0, 17%, 98%)!important;color:#101114!important}
+.about .eyebrow{color:#e21a22!important}
 .about .split-grid h2,.about .text-link{color:#101114!important}
 .about .split-grid p{color:#414146!important}
 @media(min-width:761px){.portfolio-carousel .work-card:hover{transform:scale(.72)!important;box-shadow:0 16px 32px rgba(17,17,17,.18)!important}.portfolio-carousel .work-card.is-featured:hover{transform:scale(1.14)!important;box-shadow:0 24px 48px rgba(17,17,17,.28)!important}}
