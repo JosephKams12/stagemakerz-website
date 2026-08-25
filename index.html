@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=rocket-inspired-7">
+  <link rel="stylesheet" href="css/style.css?v=rocket-inspired-9">
   <style>
     /* Critical gallery overlay rules: keep the viewer above Selected Work, never in page flow. */
     #galleryLightbox[hidden]{display:none!important}
@@ -56,6 +56,12 @@
             <button class="btn btn-primary" data-estimate>Start a project</button>
             <a class="btn btn-ghost" href="#portfolio">Explore our work</a>
           </div>
+          <div class="hero-slide-indicators" aria-label="Choose hero showcase">
+            <button class="hero-slide-indicator active" type="button" aria-label="Show animated stage-set showcase" aria-pressed="true"></button>
+            <button class="hero-slide-indicator" type="button" aria-label="Show animated exhibition showcase" aria-pressed="false"></button>
+            <button class="hero-slide-indicator" type="button" aria-label="Show outdoor-stage showcase" aria-pressed="false"></button>
+            <button class="hero-slide-indicator" type="button" aria-label="Show indoor-event showcase" aria-pressed="false"></button>
+          </div>
         </div>
         <div class="hero-visual reveal">
           <div class="motion-visual" aria-label="Animated showcase of Stagemakerz stage, exhibition, display and lighting work">
@@ -66,12 +72,6 @@
               <img class="motion-scene scene-3" src="assets/stage only.png" alt="Large outdoor stage prepared for an event" decoding="async">
               <img class="motion-scene scene-4" src="assets/selected-work/stageh1.jpg" alt="Completed indoor event production with stage lighting" decoding="async">
             </div>
-          </div>
-          <div class="hero-slide-indicators" aria-label="Choose hero showcase">
-            <button class="hero-slide-indicator active" type="button" aria-label="Show animated stage-set showcase" aria-pressed="true"></button>
-            <button class="hero-slide-indicator" type="button" aria-label="Show animated exhibition showcase" aria-pressed="false"></button>
-            <button class="hero-slide-indicator" type="button" aria-label="Show outdoor-stage showcase" aria-pressed="false"></button>
-            <button class="hero-slide-indicator" type="button" aria-label="Show indoor-event showcase" aria-pressed="false"></button>
           </div>
         </div>
       </div>
@@ -112,15 +112,19 @@
     </section>
 
     <section class="process section">
-      <div class="container">
-        <div class="section-head light reveal">
-          <p class="eyebrow">HOW WE WORK</p><h2>A clear process.<br>One exceptional result.</h2>
+      <div class="container process-layout">
+        <div class="process-overview reveal">
+          <p class="eyebrow">HOW WE WORK</p>
+          <h2>A clear process.<br><em>One exceptional result.</em></h2>
+          <p class="process-intro">From the first conversation to final delivery, every detail is carefully considered and expertly brought to life.</p>
         </div>
-        <div class="process-grid">
-          <article class="process-item reveal"><span>01</span><h3>Brief</h3><p>We listen, ask the right questions and dial in the details.</p></article>
-          <article class="process-item reveal"><span>02</span><h3>Design</h3><p>We create a tailor-made concept built around your occasion.</p></article>
-          <article class="process-item reveal"><span>03</span><h3>Execution</h3><p>Our experienced team executes the design to precision.</p></article>
-          <article class="process-item reveal"><span>04</span><h3>Delivery</h3><p>We deliver an experience that exceeds expectations.</p></article>
+        <div class="process-content reveal">
+          <div class="process-steps" aria-label="Our process">
+            <article class="process-step-card"><span>01</span><div><h3>Brief</h3><p>We listen, ask the right questions and dial in the details.</p></div></article>
+            <article class="process-step-card"><span>02</span><div><h3>Design</h3><p>We create a tailor-made concept built around your occasion.</p></div></article>
+            <article class="process-step-card"><span>03</span><div><h3>Execution</h3><p>Our experienced team executes the design to precision.</p></div></article>
+            <article class="process-step-card"><span>04</span><div><h3>Delivery</h3><p>We deliver an experience that exceeds expectations.</p></div></article>
+          </div>
         </div>
       </div>
     </section>
@@ -274,7 +278,7 @@
       <label for="stateChoice">Project location / state</label><select id="stateChoice"><option value="">Select a state</option></select>
       <label for="projectSize">Size / venue</label><input id="projectSize" type="text" placeholder="e.g. 20ft stage, 500 guests">
       <label for="projectBrief">Describe what you want</label><textarea id="projectBrief" rows="4" placeholder="Tell us the look, layout, screens, colours, branding or anything important..."></textarea>
-      <div class="chat-actions"><button class="btn btn-primary" id="chatContinue">Continue</button><button class="btn btn-outline" id="chatCall">Call</button><button class="btn btn-whatsapp" id="chatWhatsApp">WhatsApp</button></div>
+      <div class="chat-actions"><button class="btn btn-primary" id="chatSubmit">Submit</button></div>
       <div class="chat-status" id="chatStatus" role="status"></div>
     </div>
   </aside>

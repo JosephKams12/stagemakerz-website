@@ -4,6 +4,18 @@ document.addEventListener("DOMContentLoaded",()=>{
   const portfolioTrack=$("#portfolioCarousel");
   const portfolioCategoryOrder={stage:0,exhibition:1,pos:2,lighting:3};
   $$(".work-card",portfolioTrack).sort((a,b)=>(portfolioCategoryOrder[a.dataset.category]??99)-(portfolioCategoryOrder[b.dataset.category]??99)).forEach(card=>portfolioTrack?.append(card));
+  const refreshPortfolioFocus=()=>{
+    if(!portfolioTrack) return;
+    const trackRect=portfolioTrack.getBoundingClientRect();
+    const centre=trackRect.left+trackRect.width/2;
+    let featured=null, distance=Infinity;
+    $$(".work-card:not(.hidden-filter)",portfolioTrack).forEach(card=>{
+      const rect=card.getBoundingClientRect();
+      const nextDistance=Math.abs((rect.left+rect.width/2)-centre);
+      if(nextDistance<distance){featured=card;distance=nextDistance}
+    });
+    $$(".work-card",portfolioTrack).forEach(card=>card.classList.toggle("is-featured",card===featured));
+  };
 
   // Mobile navigation.
   menu?.addEventListener("click",()=>{
@@ -106,6 +118,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       f.setAttribute("aria-pressed",String(active));
     });
     $$(".work-card").forEach(card=>card.classList.toggle("hidden-filter",filter!=="all"&&card.dataset.category!==filter&&card.dataset.project!==filter));
+    requestAnimationFrame(refreshPortfolioFocus);
     document.querySelector("#portfolio")?.scrollIntoView({behavior:"smooth"});
   }));
 
@@ -118,6 +131,7 @@ document.addEventListener("DOMContentLoaded",()=>{
       f.setAttribute("aria-pressed",String(active));
     });
     $$(".work-card").forEach(card=>card.classList.toggle("hidden-filter",filter!=="all"&&card.dataset.category!==filter&&card.dataset.project!==filter));
+    requestAnimationFrame(refreshPortfolioFocus);
   }));
 
   // Accordion.
@@ -163,16 +177,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     $("#chatStatus").textContent="Great — your project details are ready.";
     return true;
   };
-  $("#chatContinue")?.addEventListener("click",validate);
-  $("#chatCall")?.addEventListener("click",()=>{
-    if(!validate())return;
-    window.location.href="tel:+2348033070460";
-  });
-  $("#chatWhatsApp")?.addEventListener("click",()=>{
+  $("#chatSubmit")?.addEventListener("click",()=>{
     if(!validate())return;
     const p=getProject();
-    const message=`Hello Stagemakerz, I would like a free estimate.%0A%0AService: ${encodeURIComponent(p.service)}%0ARequirement: ${encodeURIComponent(p.requirement||"Not specified")}%0APreferred feature: ${encodeURIComponent(p.feature||"Not specified")}%0AEvent/Occasion: ${encodeURIComponent(p.eventType||"Not specified")}%0AProject location: ${encodeURIComponent(p.state||"Not specified")}%0ASize/Venue: ${encodeURIComponent(p.size||"Not specified")}%0AProject details: ${encodeURIComponent(p.brief)}`;
-    window.open(`https://wa.me/2348033070460?text=${message}`,"_blank","noopener");
+    const message=`Hello Stagemakerz, I would like a free estimate.\n\nService: ${p.service}\nRequirement: ${p.requirement||"Not specified"}\nPreferred feature: ${p.feature||"Not specified"}\nEvent/Occasion: ${p.eventType||"Not specified"}\nProject location: ${p.state||"Not specified"}\nSize/Venue: ${p.size||"Not specified"}\nProject details: ${p.brief}`;
+    window.location.href=`mailto:info@stagemakerz.net?subject=${encodeURIComponent("New project enquiry")}&body=${encodeURIComponent(message)}`;
   });
 
   // Selected works carousel.
@@ -188,9 +197,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     portfolioProgress.style.setProperty("--portfolio-progress",`${progress}%`);
     portfolioProgress.setAttribute("aria-valuenow",String(Math.round(progress)));
   };
-  portfolioCarousel?.addEventListener("scroll",()=>requestAnimationFrame(updatePortfolioProgress),{passive:true});
-  window.addEventListener("resize",updatePortfolioProgress);
+  portfolioCarousel?.addEventListener("scroll",()=>requestAnimationFrame(()=>{updatePortfolioProgress();refreshPortfolioFocus()}),{passive:true});
+  window.addEventListener("resize",()=>{updatePortfolioProgress();refreshPortfolioFocus()});
   updatePortfolioProgress();
+  refreshPortfolioFocus();
 
   // Selected work lightbox: click a card to bring the image forward with a focused, animated view.
   const lightbox=$("#galleryLightbox"), lightboxImage=$("#galleryImage"), lightboxCaption=$("#galleryCaption"), galleryCount=$("#galleryCount"), shareMenu=$("#galleryShareMenu");

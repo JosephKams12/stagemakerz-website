@@ -656,6 +656,20 @@ body.gallery-open{overflow:hidden}.work-card{cursor:pointer}.work-card:focus-vis
 .cta-banner p{color:#fff!important;opacity:1}
 .cta-banner h2{text-shadow:0 2px 12px rgba(80,0,0,.22)}
 
+/* How we work: editorial image collage and compact process panel. */
+.process.section{padding:108px 0!important;background:#f5f2ec!important;color:#171518!important;overflow:hidden}
+.process.section::before{display:none}
+.process-layout{display:grid;grid-template-columns:minmax(280px,.76fr) minmax(0,1.24fr);gap:clamp(48px,8vw,132px);align-items:center}
+.process .eyebrow{color:var(--red)!important;margin-bottom:14px!important}.process .process-overview h2{margin:0;color:#171518!important;font-size:clamp(40px,4.6vw,70px)!important;line-height:.93!important;letter-spacing:-.06em!important;text-transform:none!important}.process .process-overview h2 em{color:var(--red)!important;font-style:normal}.process-intro{max-width:560px;margin:22px 0 28px;color:#59535a!important;font-size:15px;line-height:1.7}
+.process-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:#d6d0c8;border:1px solid #d6d0c8}
+.process-step-card{display:flex;gap:14px;min-height:132px;padding:22px 19px;background:#191a1e!important;color:#fff!important;transition:background .25s ease}
+.process-step-card:hover{background:var(--red)!important}.process-step-card>span{color:#ff8d92!important;font-size:11px;font-weight:900;letter-spacing:.1em}.process-step-card:hover>span{color:#fff!important}.process-step-card h3{margin:0 0 5px;color:#fff!important;font-size:17px!important;line-height:1.1;text-transform:uppercase!important}.process-step-card p{margin:0;color:rgba(255,255,255,.72)!important;font-size:12px;line-height:1.55}
+@media(max-width:800px){.process-layout{grid-template-columns:1fr;gap:42px}.process-overview,.process-content{max-width:620px;margin:auto}}
+@media(max-width:520px){.process.section{padding:76px 0!important}.process-steps{grid-template-columns:1fr}.process-step-card{min-height:0;padding:19px}.process .process-overview h2{font-size:clamp(37px,11vw,54px)!important}}
+
+/* Requested: keep only the How We Work label in the brand red. */
+.process .process-overview .eyebrow{color:var(--red)!important}
+
 /* Live location map. */
 .map-card{position:relative!important;overflow:hidden!important;isolation:isolate;transform:none!important;transition:none!important}
 .map-card:hover{transform:none!important;box-shadow:none!important}
@@ -838,3 +852,77 @@ body{font-family:Poppins,Inter,ui-sans-serif,system-ui,sans-serif;background:#ff
 
 /* Mobile navigation: underline tracks only the label width. */
 @media(max-width:760px){.main-nav .nav-link{align-self:flex-start!important;width:max-content!important;padding-left:0!important;padding-right:0!important}.main-nav .nav-link::after{left:0!important;right:0!important}}
+
+/* Requested: How We Work label uses the brand red. */
+.process .process-overview .eyebrow{color:var(--red)!important}
+
+/* Selected Work: a centre-focused, layered carousel inspired by the supplied reference. */
+@media(min-width:761px){
+  .portfolio-carousel-wrap{margin-top:32px}
+  .portfolio-carousel{gap:0!important;padding:76px calc(50% - 137px) 82px!important;scroll-padding-inline:calc(50% - 137px);scroll-snap-type:x mandatory!important}
+  .portfolio-carousel .work-card{flex:0 0 274px!important;margin:0 -42px!important;border:0!important;border-radius:13px!important;box-shadow:0 16px 32px rgba(17,17,17,.18)!important;opacity:.58;transform:scale(.72)!important;transform-origin:center;transition:transform .42s cubic-bezier(.2,.8,.2,1),opacity .35s ease,box-shadow .35s ease!important;z-index:1}
+  .portfolio-carousel .work-card::after{background:linear-gradient(180deg,rgba(5,5,7,.16),rgba(5,5,7,.68))!important}
+  .portfolio-carousel .work-card img{height:350px!important;filter:saturate(.92) contrast(1.04)!important}
+  .portfolio-carousel .work-card>div{padding:20px!important;opacity:0;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease}
+  .portfolio-carousel .work-card.is-featured{opacity:1;transform:scale(1.14)!important;box-shadow:0 24px 48px rgba(17,17,17,.28)!important;z-index:3}
+  .portfolio-carousel .work-card.is-featured>div{opacity:1;transform:none}
+  .portfolio-carousel .work-card:hover{transform:scale(.78)!important;box-shadow:0 20px 36px rgba(17,17,17,.24)!important}
+  .portfolio-carousel .work-card.is-featured:hover{transform:scale(1.17)!important}
+  .portfolio-arrow{top:50%!important;z-index:6}
+}
+
+/* Mobile: keep the Selected Work previous/next controls visible above the carousel. */
+@media(max-width:760px){
+  .portfolio-carousel-wrap .portfolio-arrow{display:grid!important;place-items:center;top:45%!important;z-index:6;width:40px;height:40px;border:0!important;border-radius:50%!important;background:var(--red)!important;color:#fff!important;box-shadow:0 8px 20px rgba(226,26,34,.3)!important}
+  .portfolio-carousel-wrap .portfolio-prev{left:8px!important}
+  .portfolio-carousel-wrap .portfolio-next{right:8px!important}
+}
+
+/* Mobile: retain the desktop carousel's layered, centre-featured composition. */
+@media(max-width:760px){
+  .portfolio-carousel{gap:0!important;padding:54px calc(50% - 105px) 64px!important;scroll-padding-inline:calc(50% - 105px);scroll-snap-type:x mandatory!important}
+  .portfolio-carousel .work-card{flex:0 0 210px!important;min-width:0!important;margin:0 -31px!important;border:0!important;border-radius:11px!important;box-shadow:0 12px 26px rgba(17,17,17,.18)!important;opacity:.56;transform:scale(.72)!important;transform-origin:center;transition:transform .38s cubic-bezier(.2,.8,.2,1),opacity .3s ease,box-shadow .3s ease!important;z-index:1}
+  .portfolio-carousel .work-card::after{background:linear-gradient(180deg,rgba(5,5,7,.15),rgba(5,5,7,.7))!important}
+  .portfolio-carousel .work-card img{height:278px!important;filter:saturate(.92) contrast(1.04)!important}
+  .portfolio-carousel .work-card>div{padding:15px!important;opacity:0;transform:translateY(6px);transition:opacity .22s ease,transform .22s ease}
+  .portfolio-carousel .work-card.is-featured{opacity:1;transform:scale(1.12)!important;box-shadow:0 20px 38px rgba(17,17,17,.27)!important;z-index:3}
+  .portfolio-carousel .work-card.is-featured>div{opacity:1;transform:none}
+  .portfolio-carousel .work-card:hover{transform:scale(.72)!important}
+  .portfolio-carousel .work-card.is-featured:hover{transform:scale(1.12)!important}
+  .portfolio-carousel-wrap .portfolio-arrow{top:48%!important}
+}
+
+/* Our Expertise: compact, icon-led service cards based on the supplied reference. */
+.services{background:#f7f7ef!important;color:#1a2929!important}
+.services .section-head h2{color:#1a2929!important}.services .section-head>p:last-child{color:#5b6866!important}
+.services .service-track{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important;overflow:visible!important;padding:0!important}
+.services .service-card{display:flex!important;flex-direction:column!important;min-height:350px!important;border:0!important;border-radius:14px!important;background:#fff!important;color:#1b2a2a!important;box-shadow:0 4px 16px rgba(39,55,52,.08)!important;isolation:auto!important;transform:none!important;transition:transform .25s ease,box-shadow .25s ease!important}
+.services .service-card:nth-child(2){background:var(--red)!important;color:#fff!important}.services .service-card:nth-child(3){background:#073e3b!important;color:#fff!important}.services .service-card:nth-child(4){background:#f4e5e6!important}
+.services .service-card::before,.services .service-card::after,.services .service-image::after{display:none!important}
+.services .service-card:hover{transform:translateY(-7px)!important;border:0!important;box-shadow:0 15px 30px rgba(39,55,52,.16)!important}
+.services .service-image{display:grid!important;place-items:center!important;flex:0 0 54px!important;width:54px!important;height:54px!important;margin:30px 28px 0!important;overflow:visible!important;background:transparent!important}
+.services .service-image img{display:none!important}
+.services .service-image::before{position:static!important;inset:auto!important;display:grid!important;place-items:center!important;width:44px!important;height:44px!important;border:2px solid currentColor!important;border-radius:9px!important;background:transparent!important;color:#254744!important;font-family:Arial,sans-serif!important;font-size:25px!important;font-weight:400!important;line-height:1!important;opacity:1!important;transform:none!important}
+.services .service-card:nth-child(1) .service-image::before{content:"⌑"!important}.services .service-card:nth-child(2) .service-image::before{content:"⌂"!important;color:#fff!important}.services .service-card:nth-child(3) .service-image::before{content:"▦"!important;color:var(--red)!important}.services .service-card:nth-child(4) .service-image::before{content:"✦"!important}
+.services .service-card .card-body{display:flex!important;flex:1!important;flex-direction:column!important;padding:18px 28px 26px!important;background:transparent!important;color:inherit!important}
+.services .card-number{display:none!important}.services .card-body h3{margin:0 0 13px!important;color:inherit!important;font-size:clamp(18px,1.7vw,23px)!important;line-height:1.14!important;text-transform:none!important;letter-spacing:-.035em!important}.services .card-body p{min-height:0!important;margin:0!important;color:#5c6866!important;font-size:12px!important;line-height:1.6!important}.services .service-card:nth-child(2) .card-body p,.services .service-card:nth-child(3) .card-body p{color:rgba(255,255,255,.78)!important}
+.services .service-portfolio,.services .service-card:nth-child(2) .service-portfolio,.services .service-card:nth-child(3) .service-portfolio{width:max-content!important;margin-top:auto!important;padding:9px 13px!important;border:0!important;border-radius:999px!important;background:#111!important;color:#fff!important;font-size:10px!important;font-weight:800!important;letter-spacing:0!important;text-transform:none!important;box-shadow:none!important}.services .service-portfolio::after{content:"›"!important;margin-left:6px;font-size:15px!important}.services .service-card:hover .service-portfolio{background:#111!important;color:#fff!important;box-shadow:none!important}.services .service-portfolio:active,.services .service-portfolio:focus-visible{background:var(--red)!important;color:#fff!important;outline:0!important}
+@media(max-width:900px){.services .service-track{grid-template-columns:repeat(2,minmax(0,1fr))!important}.services .service-card{min-height:320px!important}}
+@media(max-width:760px){.services .service-track-wrap{overflow:hidden!important}.services .service-track{display:flex!important;gap:14px!important;overflow-x:auto!important;padding:4px 0 18px!important;scroll-snap-type:x mandatory!important}.services .service-track .service-card{flex:0 0 100%!important;min-width:100%!important;min-height:325px!important;scroll-snap-align:start;scroll-snap-stop:always}.services .service-image{margin-top:27px!important}.services .slider-btn{display:grid!important;background:#fff!important;color:#073e3b!important;border:0!important}}
+
+/* Selected Work: the red hover line belongs to the filter labels. */
+.portfolio-filter .filter{position:relative!important;border:0!important;border-radius:0!important;background:transparent!important;color:#414146!important}
+.portfolio-filter .filter::after{content:"";position:absolute;left:20px;right:20px;bottom:5px;height:2px;background:var(--red);opacity:0;transform:scaleX(0);transform-origin:left;transition:transform .24s ease,opacity .16s ease}
+.portfolio-filter .filter:hover,.portfolio-filter .filter:focus-visible{background:transparent!important;color:var(--red)!important;outline:0!important}
+.portfolio-filter .filter:hover::after,.portfolio-filter .filter:focus-visible::after{opacity:0;transform:scaleX(0)}
+.portfolio-filter .filter.active{background:transparent!important;color:var(--red)!important}
+.portfolio-filter .filter.active::after{opacity:1;transform:scaleX(1)}
+
+/* Hero: slide controls sit beneath the CTA buttons rather than over the media layer. */
+.hero-copy .hero-slide-indicators{position:relative!important;z-index:3!important;left:auto!important;bottom:auto!important;display:flex!important;align-items:center!important;justify-content:center!important;width:max-content!important;margin:18px auto 0!important;padding:8px 10px!important;transform:none!important}
+@media(max-width:760px){.hero-copy .hero-slide-indicators{margin-top:16px!important}}
+
+/* Chat assistant: one clear email submission action. */
+.chat-actions{grid-template-columns:1fr!important}
+@media(min-width:761px){.portfolio-carousel .work-card:hover{transform:scale(.72)!important;box-shadow:0 16px 32px rgba(17,17,17,.18)!important}.portfolio-carousel .work-card.is-featured:hover{transform:scale(1.14)!important;box-shadow:0 24px 48px rgba(17,17,17,.28)!important}}
+@media(max-width:760px){.portfolio-carousel .work-card:hover{transform:scale(.72)!important}.portfolio-carousel .work-card.is-featured:hover{transform:scale(1.12)!important}}
