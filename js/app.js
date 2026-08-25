@@ -187,9 +187,26 @@ document.addEventListener("DOMContentLoaded",()=>{
   // Selected works carousel.
   const portfolioCarousel=$("#portfolioCarousel");
   const portfolioProgress=$("#portfolioProgress");
-  const portfolioStep=()=>Math.max(260,(portfolioCarousel?.querySelector(".work-card")?.getBoundingClientRect().width||300)+20);
-  $("[data-portfolio-prev]")?.addEventListener("click",()=>portfolioCarousel?.scrollBy({left:-portfolioStep(),behavior:"smooth"}));
-  $("[data-portfolio-next]")?.addEventListener("click",()=>portfolioCarousel?.scrollBy({left:portfolioStep(),behavior:"smooth"}));
+  const movePortfolio=(direction)=>{
+    if(!portfolioCarousel) return;
+    const cards=$$(".work-card:not(.hidden-filter)",portfolioCarousel);
+    if(!cards.length) return;
+    const carouselRect=portfolioCarousel.getBoundingClientRect();
+    const carouselCentre=carouselRect.left+carouselRect.width/2;
+    let currentIndex=0, closestDistance=Infinity;
+    cards.forEach((card,index)=>{
+      const rect=card.getBoundingClientRect();
+      const distance=Math.abs((rect.left+rect.width/2)-carouselCentre);
+      if(distance<closestDistance){currentIndex=index;closestDistance=distance}
+    });
+    const nextIndex=Math.max(0,Math.min(cards.length-1,currentIndex+direction));
+    if(nextIndex===currentIndex) return;
+    const targetRect=cards[nextIndex].getBoundingClientRect();
+    const targetCentre=targetRect.left+targetRect.width/2;
+    portfolioCarousel.scrollBy({left:targetCentre-carouselCentre,behavior:"smooth"});
+  };
+  $("[data-portfolio-prev]")?.addEventListener("click",()=>movePortfolio(-1));
+  $("[data-portfolio-next]")?.addEventListener("click",()=>movePortfolio(1));
   const updatePortfolioProgress=()=>{
     if(!portfolioCarousel||!portfolioProgress)return;
     const range=Math.max(1,portfolioCarousel.scrollWidth-portfolioCarousel.clientWidth);

@@ -57,8 +57,7 @@
             <a class="btn btn-ghost" href="#portfolio">Explore our work</a>
           </div>
           <div class="hero-slide-indicators" aria-label="Choose hero showcase">
-            <button class="hero-slide-indicator active" type="button" aria-label="Show animated stage-set showcase" aria-pressed="true"></button>
-            <button class="hero-slide-indicator" type="button" aria-label="Show animated exhibition showcase" aria-pressed="false"></button>
+            <button class="hero-slide-indicator active" type="button" aria-label="Show stage-set video showcase" aria-pressed="true"></button>
             <button class="hero-slide-indicator" type="button" aria-label="Show outdoor-stage showcase" aria-pressed="false"></button>
             <button class="hero-slide-indicator" type="button" aria-label="Show indoor-event showcase" aria-pressed="false"></button>
           </div>
@@ -67,8 +66,9 @@
           <div class="motion-visual" aria-label="Animated showcase of Stagemakerz stage, exhibition, display and lighting work">
             <div class="motion-glow" aria-hidden="true"></div>
             <div class="motion-main">
-              <img class="motion-scene scene-1 active" src="assets/video/stagemakerz-stage-reel.webp" data-motion data-static-src="assets/stagemakerz_stage_clean.jpg" alt="Animated Stagemakerz stage-set showcase" fetchpriority="high" decoding="async">
-              <img class="motion-scene scene-2" src="assets/video/stagemakerz-exhibition-reel.webp" data-motion data-static-src="assets/selected-work/exhibition.jpg" alt="Animated Stagemakerz exhibition showcase" decoding="async">
+              <video class="motion-scene scene-1 active" autoplay muted loop playsinline preload="metadata" aria-label="Stagemakerz stage-set video showcase" fetchpriority="high">
+                <source src="assets/video/13416698_1920_1080_25fps.mp4" type="video/mp4">
+              </video>
               <img class="motion-scene scene-3" src="assets/stage only.png" alt="Large outdoor stage prepared for an event" decoding="async">
               <img class="motion-scene scene-4" src="assets/selected-work/stageh1.jpg" alt="Completed indoor event production with stage lighting" decoding="async">
             </div>
