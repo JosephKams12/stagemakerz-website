@@ -1188,3 +1188,13 @@ body .gallery-dialog figure img {
 body .portfolio-carousel .work-card img {
   filter:brightness(1.16) contrast(1.1) saturate(1.12) !important;
 }
+
+/* Requested How We Work introductory copy color. */
+.process .process-intro {
+  color:#101114 !important;
+}
+
+/* Main navigation labels: larger, clearer reading size. */
+.site-header .nav-item .nav-link {
+  font-size:16px !important;
+}
