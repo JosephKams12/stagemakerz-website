@@ -926,7 +926,7 @@ body{font-family:Poppins,Inter,ui-sans-serif,system-ui,sans-serif;background:#ff
 .chat-actions{grid-template-columns:1fr!important}
 
 /* Our Point of View: a calm grey ground with readable copy. */
-.about{background:hsl(0, 66%, 83%)!important;color:#101114!important}
+.about{background:hsl(0, 17%, 98%)!important;color:#101114!important}
 .about .split-grid h2,.about .text-link{color:#101114!important}
 .about .split-grid p{color:#414146!important}
 @media(min-width:761px){.portfolio-carousel .work-card:hover{transform:scale(.72)!important;box-shadow:0 16px 32px rgba(17,17,17,.18)!important}.portfolio-carousel .work-card.is-featured:hover{transform:scale(1.14)!important;box-shadow:0 24px 48px rgba(17,17,17,.28)!important}}
