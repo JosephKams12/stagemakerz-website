@@ -1148,9 +1148,9 @@ p,
 }
 
 /* Navigation mega panels: concise summaries drawn from each page section. */
-.nav-item{position:relative;display:block}.nav-item .nav-link{display:block;padding:8px 0 6px!important;border-bottom:2px solid rgba(16,17,20,.2);transition:color .2s ease,border-color .2s ease}.nav-item:hover>.nav-link,.nav-item:focus-within>.nav-link,.nav-item.mega-open>.nav-link,.nav-item>.nav-link.active{border-color:var(--red)}
-.mega-menu{position:fixed;z-index:60;top:100px;left:50%;width:min(720px,calc(100vw - 48px));padding:30px 34px 32px;display:grid;gap:10px;border:1px solid rgba(21,23,26,.10);background:rgba(255,255,255,.98);box-shadow:0 22px 55px rgba(17,24,39,.16);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-8px);transition:opacity .18s ease,visibility .18s ease,transform .22s ease}
-.nav-item:hover .mega-menu,.nav-item:focus-within .mega-menu,.nav-item.mega-open .mega-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.nav-item{position:relative;display:block}.nav-item .nav-link{display:block;padding:8px 0 6px!important;border-bottom:2px solid transparent;transition:color .2s ease,border-color .2s ease}.nav-item:focus-within>.nav-link,.nav-item.mega-open>.nav-link,.nav-item>.nav-link.active{border-color:var(--red)}
+.mega-menu{position:fixed;z-index:60;top:100px;right:0;width:min(720px,calc(100vw - 48px));padding:30px 34px 32px;display:grid;gap:10px;border:1px solid rgba(21,23,26,.10);background:rgba(255,255,255,.98);box-shadow:0 22px 55px rgba(17,24,39,.16);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .18s ease,visibility .18s ease,transform .22s ease}
+.nav-item:hover .mega-menu,.nav-item:focus-within .mega-menu,.nav-item.mega-open .mega-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
 .mega-kicker{margin:0;color:var(--red);font-size:11px!important;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.mega-menu h2{max-width:620px;margin:0;color:#101114;font-size:clamp(24px,3vw,36px)!important;line-height:1.05!important;letter-spacing:-.035em;text-transform:none!important}.mega-menu>p:not(.mega-kicker){max-width:650px;margin:0;color:#4b5356;font-size:15px!important;line-height:1.65}.mega-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}.mega-links a,.mega-links button{display:inline-flex;align-items:center;gap:9px;padding:10px 0;border:0;background:transparent;color:#15171a;font:inherit!important;font-size:13px!important;font-weight:800;text-decoration:none;cursor:pointer}.mega-links a:first-child,.mega-links button:first-child{color:var(--red)}.mega-links span{font-size:17px;line-height:1}.mega-service-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:8px;background:rgba(21,23,26,.12)}.mega-service-list a{display:flex;gap:10px;align-items:center;padding:14px 15px;background:#fff;color:#15171a;font-size:14px;font-weight:700}.mega-service-list a:hover,.mega-service-list a:focus-visible{background:#101114;color:#fff;outline:0}.mega-service-list b{color:var(--red);font-size:11px;letter-spacing:.08em}.mega-service-list a:hover b,.mega-service-list a:focus-visible b{color:#ff6b70}
 @media(max-width:760px){.nav-item .nav-link{padding:10px 0 8px!important}.mega-menu{position:static;width:100%;margin:0;padding:16px 0 6px;border:0;border-top:1px solid rgba(21,23,26,.12);box-shadow:none;background:transparent;transform:none;display:none;opacity:1;visibility:visible;pointer-events:auto}.nav-item:hover .mega-menu,.nav-item:focus-within .mega-menu{display:none;transform:none}.nav-item.mega-open .mega-menu{display:grid;transform:none}.mega-menu h2{font-size:22px!important}.mega-menu>p:not(.mega-kicker){font-size:14px!important}.mega-service-list{grid-template-columns:1fr}.mega-service-list a{padding:11px 0;background:transparent}.mega-service-list a:hover,.mega-service-list a:focus-visible{background:transparent;color:#15171a}.mega-links{display:grid;gap:2px}.mega-links a,.mega-links button{padding:7px 0}.nav-cta{margin-top:12px!important}}
 
@@ -1204,12 +1204,13 @@ body .portfolio-carousel .work-card img {
 /* Service thumbnails in the What We Do navigation panel. */
 #megaServices .mega-service-list a {
   display:grid;
-  grid-template-columns:52px minmax(0,1fr);
+  grid-template-columns:minmax(0,1fr) 52px;
   grid-template-rows:auto auto;
   column-gap:12px;
   padding:8px 12px;
 }
 #megaServices .mega-service-thumb {
+  grid-column:2;
   grid-row:1 / -1;
   width:52px;
   height:52px;
@@ -1217,6 +1218,7 @@ body .portfolio-carousel .work-card img {
 }
 #megaServices .mega-service-list b,
 #megaServices .mega-service-name {
+  grid-column:1;
   align-self:end;
 }
 #megaServices .mega-service-list b {
@@ -1229,13 +1231,14 @@ body .portfolio-carousel .work-card img {
 /* Thumbnail for the Who We Are navigation panel. */
 #megaAbout .mega-about-summary {
   display:flex;
+  flex-direction:row-reverse;
   align-items:flex-start;
   gap:18px;
 }
 #megaAbout .mega-about-thumb {
-  flex:0 0 82px;
-  width:82px;
-  height:82px;
+  flex:0 0 180px;
+  width:180px;
+  height:220px;
   object-fit:cover;
 }
 #megaAbout .mega-about-summary p {
@@ -1250,6 +1253,51 @@ body .portfolio-carousel .work-card img {
   #megaAbout .mega-about-thumb { flex-basis:64px; width:64px; height:64px; }
 }
 
-/* Keep the hero copy unchanged while justifying the site's paragraph text. */
+/* Center only the hero copy; paragraph text elsewhere remains unchanged. */
 p { text-align:justify; }
-.hero p { text-align:left; }
+.hero .hero-copy,
+.hero p { text-align:center; }
+
+/* Requested refinements for the Who We Are panel and mobile hero. */
+@media(min-width:761px){
+  #megaAbout { padding-bottom:18px; }
+}
+@media(max-width:760px){
+  .hero h1 { font-size:clamp(42px,11vw,56px)!important; line-height:.95!important; }
+  .hero-lead { font-size:13px!important; line-height:1.65!important; }
+}
+
+/* A single active-page line moves smoothly between desktop navigation labels. */
+@media(min-width:761px){
+  .main-nav { position:relative; }
+  .nav-item:focus-within>.nav-link,
+  .nav-item.mega-open>.nav-link,
+  .nav-item>.nav-link.active { border-color:transparent; }
+  .nav-active-indicator {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    height:2px;
+    background:var(--red);
+    pointer-events:none;
+  }
+  .nav-active-indicator.is-ready {
+    transition:transform .42s cubic-bezier(.22,.61,.36,1),width .42s cubic-bezier(.22,.61,.36,1),opacity .2s ease;
+  }
+  .nav-active-indicator[hidden] { opacity:0; }
+}
+
+/* Selected Work cards can be focused directly as well as through the arrows. */
+@media(min-width:761px){
+  .portfolio-carousel .work-card:hover,
+  .portfolio-carousel .work-card:focus { opacity:1; transform:scale(1.14)!important; box-shadow:0 24px 48px rgba(17,17,17,.28)!important; z-index:4; }
+  .portfolio-carousel .work-card:hover>div,
+  .portfolio-carousel .work-card:focus>div { opacity:1; transform:none; }
+}
+@media(max-width:760px){
+  .portfolio-carousel .work-card:hover,
+  .portfolio-carousel .work-card:focus { opacity:1; transform:scale(1.12)!important; box-shadow:0 20px 38px rgba(17,17,17,.27)!important; z-index:4; }
+  .portfolio-carousel .work-card:hover>div,
+  .portfolio-carousel .work-card:focus>div { opacity:1; transform:none; }
+}

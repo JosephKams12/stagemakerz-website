@@ -56,16 +56,32 @@ document.addEventListener("DOMContentLoaded",()=>{
 
   // Smooth section navigation + active page marker.
   const links=$$(".nav-link");
+  const navIndicator=document.createElement("span");
+  navIndicator.className="nav-active-indicator";
+  nav.append(navIndicator);
+  const updateNavIndicator=()=>{
+    if(matchMedia("(max-width: 760px)").matches){navIndicator.hidden=true;return}
+    const activeLink=links.find(link=>link.classList.contains("active"));
+    if(!activeLink){navIndicator.hidden=true;return}
+    const navRect=nav.getBoundingClientRect(),linkRect=activeLink.getBoundingClientRect();
+    navIndicator.hidden=false;
+    navIndicator.style.width=`${linkRect.width}px`;
+    navIndicator.style.transform=`translate(${linkRect.left-navRect.left}px,${linkRect.bottom-navRect.top-2}px)`;
+  };
   const sections=links.map(a=>$(a.getAttribute("href"))).filter(Boolean);
   const observer=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         const id="#"+entry.target.id;
         links.forEach(l=>l.classList.toggle("active",l.getAttribute("href")===id));
+        updateNavIndicator();
       }
     });
   },{rootMargin:"-30% 0px -60% 0px",threshold:0});
   sections.forEach(s=>observer.observe(s));
+  updateNavIndicator();
+  requestAnimationFrame(()=>navIndicator.classList.add("is-ready"));
+  window.addEventListener("resize",updateNavIndicator,{passive:true});
 
   // Lightweight reveal animations. No animation library.
   const revealObserver=new IntersectionObserver(entries=>{
