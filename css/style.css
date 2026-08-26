@@ -1279,6 +1279,8 @@ body .portfolio-carousel .work-card img {
   .hero-lead { max-width:300px!important; font-size:10px!important; }
   .hero .button-row { justify-content:center; }
   .hero .button-row .btn { flex:0 1 min(150px, calc((100% - 8px) / 2)); min-width:0; font-size:10px!important; }
+  .section:not(.hero) p { text-align:left!important; }
+  .trust-list { grid-template-columns:repeat(2, minmax(0, 1fr)); }
 }
 
 /* Center only the hero copy; paragraph text elsewhere remains unchanged. */
