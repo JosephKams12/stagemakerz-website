@@ -1325,3 +1325,23 @@ p { text-align:justify; }
   .portfolio-carousel .work-card:hover>div,
   .portfolio-carousel .work-card:focus>div { opacity:1; transform:none; }
 }
+
+/*centralised mega menu drop down*/
+
+
+@media (min-width: 761px) {
+    .mega-menu {
+        position: fixed !important;
+        top: 100px !important;
+        left: 50% !important;
+        right: auto !important;
+        margin-left: 0 !important;
+        transform: translateX(-50%) translateY(-8px) !important;
+    }
+
+    .nav-item:hover .mega-menu,
+    .nav-item:focus-within .mega-menu,
+    .nav-item.mega-open .mega-menu {
+        transform: translateX(-50%) translateY(0) !important;
+    }
+}
