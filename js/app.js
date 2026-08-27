@@ -274,6 +274,10 @@ document.addEventListener("DOMContentLoaded",()=>{
     const nextIndex=Math.max(0,Math.min(cards.length-1,currentIndex+direction));
     if(nextIndex===currentIndex) return;
     const target=cards[nextIndex];
+    if(window.matchMedia("(max-width:760px)").matches){
+      target.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});
+      return;
+    }
     const targetLeft=target.offsetLeft-(portfolioCarousel.clientWidth-target.offsetWidth)/2;
     portfolioCarousel.scrollTo({left:targetLeft,behavior:"smooth"});
   };

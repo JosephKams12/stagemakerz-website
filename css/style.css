@@ -1360,8 +1360,19 @@ p { text-align:justify; }
 
 /* Service card CTA: white label and one compact mobile size across every card. */
 .services .service-track .service-card .service-portfolio{color:#fff!important}
+.services .service-track .service-card .service-portfolio:hover,
+.services .service-track .service-card .service-portfolio:active,
+.services .service-track .service-card .service-portfolio:focus-visible{color:var(--red)!important}
 @media(max-width:760px){
   .services .service-track .service-card .service-portfolio{width:max-content!important;min-width:0!important;min-height:0!important;padding:7px 9px!important;font-size:9px!important;line-height:1!important}
   .services .service-track .service-card .card-body h3{margin:0 0 8px!important;font-size:16px!important;line-height:1.18!important}
   .services .service-track .service-card .card-body p{min-height:0!important;margin:0 0 14px!important;font-size:11px!important;line-height:1.5!important}
 }
+
+/* Selected Work: keep the active mobile card centred after swiping or using the arrows. */
+@media(max-width:760px){
+  .portfolio-carousel .work-card{scroll-snap-align:center!important;scroll-snap-stop:always}
+}
+
+/* Why Choose Us: precision image overlay, kept behind the section content. */
+.why::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(rgba(16,17,20,.60),rgba(16,17,20,.60)),url("../assets/precision%20image.jpg") center/cover no-repeat;opacity:.22}
