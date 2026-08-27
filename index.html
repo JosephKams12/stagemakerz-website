@@ -4,17 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Stagemakerz Company — stage sets, exhibition stands, product displays, lighting and event environments.">
-  <title>Stagemakerz Company — The Right <br>Stage Set & Design For You</title>
+  
+  <title>Stagemakerz Company — The Right Stage Set & Design For You</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=rocket-inspired-10">
   <style>
+
     /* Critical gallery overlay rules: keep the viewer above Selected Work, never in page flow. */
     #galleryLightbox[hidden]{display:none!important}
     #galleryLightbox{position:fixed;inset:0;z-index:9999;display:grid;place-items:center}
     #galleryLightbox .gallery-backdrop{position:absolute;inset:0;background:rgba(5,5,7,.92)}
     #galleryLightbox .gallery-dialog{position:relative;z-index:1;width:min(1180px,calc(100vw - 44px));height:min(780px,calc(100vh - 44px));display:grid;place-items:center}
+    
     /* Navigation is absolutely anchored to the centre-left and centre-right of the viewer. */
     #galleryLightbox .gallery-nav{position:absolute!important;z-index:4;top:50%!important;bottom:auto!important;width:46px;height:46px;display:grid;place-items:center;transform:translateY(-50%)!important;border:1px solid rgba(17,17,17,.12);border-radius:50%;background:#fff;color:#e21a22;box-shadow:0 12px 28px rgba(40,27,24,.14);font-size:20px;font-weight:900;line-height:1;transition:transform .25s ease,background .25s ease,color .25s ease}
     #galleryLightbox .gallery-nav-prev{left:10px!important;right:auto!important}
@@ -80,7 +83,7 @@
         <div class="hero-copy reveal">
           <p class="eyebrow">STAGEMAKERZ COMPANY</p>
           <span class="hero-rule" aria-hidden="true"></span>
-          <h1>The Right Stage Set<br>&amp; <span>Design For You</span></h1>
+          <h1>The Right<br>Stage Set &amp;<br><span>Design For You</span></h1>
           <p class="hero-lead">We are Specialists in Designs, Stage sets, Pavilion, Point of Sales, Set Lighting and Display Units. As Architects, we understand designs in 3D (three dimensions), providing depth to clients’ briefs and their execution. We understand how various designs come together to form a whole.</p>
           <div class="button-row">
             <button class="btn btn-primary" data-estimate>Start a project</button>
@@ -91,7 +94,10 @@
           <div class="motion-visual" aria-label="Animated showcase of Stagemakerz stage, exhibition, display and lighting work">
             <div class="motion-glow" aria-hidden="true"></div>
             <div class="motion-main">
-              <video class="motion-scene scene-1 active" autoplay muted loop playsinline preload="metadata" aria-label="Stagemakerz stage-set video showcase" fetchpriority="high">
+              <video class="motion-scene scene-1 hero-loop-video active" autoplay muted playsinline preload="auto" aria-label="Stagemakerz stage-set video showcase" fetchpriority="high">
+                <source src="assets/video/13416698_1920_1080_25fps.mp4" type="video/mp4">
+              </video>
+              <video class="motion-scene scene-1 hero-loop-video" muted playsinline preload="auto" aria-hidden="true" tabindex="-1">
                 <source src="assets/video/13416698_1920_1080_25fps.mp4" type="video/mp4">
               </video>
             </div>

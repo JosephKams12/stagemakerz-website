@@ -101,6 +101,40 @@ document.addEventListener("DOMContentLoaded",()=>{
       scene.removeAttribute("data-motion");
     });
   }
+  // Crossfade two preloaded copies of the hero reel instead of using the
+  // browser's native loop, which can briefly flash on some video decoders.
+  const heroLoopVideos=$$(".hero-loop-video");
+  if(heroLoopVideos.length===2){
+    if(reducedMotion.matches){
+      heroLoopVideos[0].loop=true;
+      heroLoopVideos[1].hidden=true;
+    }else{
+      let currentHeroVideo=heroLoopVideos[0];
+      let nextHeroVideo=heroLoopVideos[1];
+      let heroLoopTransitioning=false;
+      const switchHeroVideo=()=>{
+        if(heroLoopTransitioning) return;
+        heroLoopTransitioning=true;
+        nextHeroVideo.currentTime=0;
+        nextHeroVideo.play().then(()=>{
+          nextHeroVideo.classList.add("active");
+          currentHeroVideo.classList.remove("active");
+          window.setTimeout(()=>{
+            currentHeroVideo.pause();
+            currentHeroVideo.currentTime=0;
+            [currentHeroVideo,nextHeroVideo]=[nextHeroVideo,currentHeroVideo];
+            heroLoopTransitioning=false;
+          },320);
+        }).catch(()=>{heroLoopTransitioning=false;});
+      };
+      heroLoopVideos.forEach(video=>{
+        video.addEventListener("timeupdate",()=>{
+          if(video===currentHeroVideo&&Number.isFinite(video.duration)&&video.currentTime>=video.duration-.45) switchHeroVideo();
+        });
+        video.addEventListener("ended",()=>{if(video===currentHeroVideo) switchHeroVideo();});
+      });
+    }
+  }
   if(heroIndicators.length){
     let activeHeroSlide=0;
     const setActiveHeroSlide=index=>{

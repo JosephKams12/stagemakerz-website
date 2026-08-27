@@ -1345,3 +1345,23 @@ p { text-align:justify; }
         transform: translateX(-50%) translateY(0) !important;
     }
 }
+
+/* Hero video: use a single compositing layer to prevent intermittent flashes while looping. */
+.motion-visual .motion-main{isolation:isolate}
+.motion-visual video.motion-scene{display:block!important;opacity:0!important;transform:none!important;-webkit-transform:none!important;transition:opacity .32s linear!important;will-change:opacity!important;backface-visibility:visible!important;filter:none!important}
+.motion-visual video.motion-scene.active{opacity:1!important;transform:none!important}
+
+/* Selected Work: hover temporarily takes focus without changing the saved carousel focus. */
+@media (min-width:761px) and (hover:hover){
+  .portfolio-carousel:has(.work-card:hover) .work-card.is-featured:not(:hover){opacity:.58;transform:scale(.72)!important;box-shadow:0 16px 32px rgba(17,17,17,.18)!important;z-index:1}
+  .portfolio-carousel .work-card:hover{opacity:1;transform:scale(1.14)!important;box-shadow:0 24px 48px rgba(17,17,17,.28)!important;z-index:4}
+  .portfolio-carousel .work-card:hover>div{opacity:1;transform:none}
+}
+
+/* Service card CTA: white label and one compact mobile size across every card. */
+.services .service-track .service-card .service-portfolio{color:#fff!important}
+@media(max-width:760px){
+  .services .service-track .service-card .service-portfolio{width:max-content!important;min-width:0!important;min-height:0!important;padding:7px 9px!important;font-size:9px!important;line-height:1!important}
+  .services .service-track .service-card .card-body h3{margin:0 0 8px!important;font-size:16px!important;line-height:1.18!important}
+  .services .service-track .service-card .card-body p{min-height:0!important;margin:0 0 14px!important;font-size:11px!important;line-height:1.5!important}
+}
